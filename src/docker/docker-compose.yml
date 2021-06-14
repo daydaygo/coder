@@ -1,0 +1,148 @@
+version: '3'
+# networks:
+#   default:
+#     external:
+#       name: default_php_net
+services:
+    test:
+        image: alpine
+        command:
+            - /bin/sh
+            - -c
+            - |
+                watch -n 1 'ping baidu.com'
+    db:
+        # platform: linux/x86_64
+        # image: mysql
+        image: mariadb:10.5.8
+        volumes:
+            # - ./config/my.cnf:/etc/mysql/conf.d/my.cnf
+            # - ./config/sql:/docker-entrypoint-initdb.d
+            - ./data/mysql:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            TZ: Asia/Shanghai
+            MYSQL_ROOT_PASSWORD: root
+            # MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    tdengine:
+        image: tdengine/tdengine
+        volumes:
+            - ./data/taos:/var/lib/taos
+            - ./log/taos:/var/log/taos
+            - ./config/taos:/etc/taos
+        ports:
+            - 6030-6041:6030-6041
+    chs:
+        image: yandex/clickhouse-server
+        ulimits:
+            nofile:
+                soft: 262144
+                hard: 262144
+        ports:
+            - 8123:8123 # http
+            # - 9000:9000 # clickhouse-client
+        volumes:
+            - ./data/clickhouse:/var/lib/clickhouse
+            # - ./config/clickhouse/config.xml:/etc/clickhouse-server/config.xml
+            # - ./config/clickhouse/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh # 只能执行一次
+    # chc:
+    #     image: yandex/clickhouse-client
+    #     links:
+    #         - chs
+    #     entrypoint: "/usr/bin/clickhouse-client --host chs"
+    #     tty: true
+    redis:
+        image: redis:alpine
+        # image: redislabs/redismod
+        volumes:
+            - ./config/redis.conf:/etc/redis/redis.conf
+            - ./data/redis:/data
+        ports:
+            - "6379:6379"
+    nginx:
+        image: nginx:alpine
+        volumes:
+            - ./config/ng_socketio.conf:/etc/nginx/conf.d/ng_socketio.conf
+        ports:
+            - 9502:9502
+    mongo:
+        image: mongo
+        ports:
+            - 27017:27017
+        # command: --serviceExecutor adaptive --config /etc/mongo/mongod.conf
+        # volumes:
+            # - ./config/mongo/mongod.conf:/etc/mongo/mongod.conf
+        # environment:
+            # MONGO_INITDB_ROOT_USERNAME: root
+            # MONGO_INITDB_ROOT_PASSWORD: example
+    mongoa:
+        image: mongo-express
+        ports:
+            - 8081:8081
+        links:
+            - mongo
+        environment:
+            ME_CONFIG_MONGODB_SERVER: mongo
+            # ME_CONFIG_MONGODB_AUTH_DATABASE: admin
+            # ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            # ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    rabbitmq:
+        image: rabbitmq:management-alpine
+        hostname: myrabbitmq
+        volumes:
+            - ./data/rabbitmq:/var/lib/rabbitmq/mnesia
+        ports:
+            - "5672:5672" # mq
+            - "15672:15672" # admin
+    # https://prometheus.io/docs/prometheus/latest/installation/
+    prometheus:
+        image: prom/prometheus
+        # ports:
+            # - "9090:9090"
+        volumes:
+            - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+        network_mode: host
+    # https://grafana.com/docs/installation/docker/
+    grafana:
+        image: grafana/grafana
+        ports:
+            - "3000:3000"
+    es:
+        image: elasticsearch:7.8.0
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        environment:
+            discovery.type: "single-node"
+    kibana:
+        image: kibana
+        ports:
+            - "5601:5601"
+    zookeeper:
+        image: zookeeper
+    # apollo:
+    #     image: nobodyiam/apollo-quick-start
+    #     links:
+    #         - mysql:apollo-db
+    #     ports:
+    #         - 8080:8080
+    #         - 8070:8070
+    etcd:
+        image: quay.io/coreos/etcd
+        environment:
+            ETCD_ADVERTISE_CLIENT_URLS: "http://0.0.0.0:2379"
+            ETCD_LISTEN_CLIENT_URLS: "http://0.0.0.0:2379"
+            ETCDCTL_API: "3"
+        ports:
+            - 2379:2379 # http
+            # - 2380:2380 # 节点间
+            # - 4001:4001
+    etcda:
+        image: evildecay/etcdkeeper
+        environment:
+            HOST: 0.0.0.0
+        ports:
+            - 10280:8080
+        links:
+            - etcd

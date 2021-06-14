@@ -1,0 +1,477 @@
+{
+  "rootTopicKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+  "editorRootTopicKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+  "focusKey": "1b30a7ce-497e-43f1-a7c0-31de9db4a572",
+  "extData": {
+    "TOPIC_REFERENCE": {
+      "reference": {}
+    }
+  },
+  "topics": [
+    {
+      "key": "43ac3ed5-e17b-4604-9e14-13d5d6888088",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "经典题目"
+        },
+        {
+          "type": "DESC",
+          "data": "反转二叉树，镜像二叉树。\n\n面试题 04.06. 后继者\n971\n\n987\n\n99\n\n863\n\n路径和\n\n计算深度\n\n深度求完，求宽度。 这俩母题要会哦\n\n求直径，这个画一个图，图中 null 用虚线画出来，大家容易理解一点\n\n# Definition for a binary tree node.\n\n# class TreeNode:\n\n# def init\\(self, x\\):\n\n# self\\.val = x\n\n# self\\.left = None\n\n# self\\.right = None\n\nclass Solution:\n```\ndef widthOfBinaryTree(self, root: TreeNode) -> int:\n    q = [(root, 0, 0)]\n    cur_depth = leftmost = ans = 0\n\n    while q:\n        for _ in range(len(q)):\n            node, depth, pos = q.pop(0)\n            if node:\n                q.append((node.left, depth + 1, pos * 2))\n                q.append((node.right, depth + 1, pos * 2 + 1))\n                if cur_depth != depth:\n                    cur_depth = depth\n                    leftmost = pos\n                ans = max(ans, pos - leftmost + 1)\n    return ans\n\n```\n"
+        }
+      ]
+    },
+    {
+      "key": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "parentKey": null,
+      "subKeys": [
+        "4b7c6dab-6287-4893-893c-e313be309e60",
+        "5bd99801-c126-40ef-98e2-ef0633651105",
+        "58ec1823-2b0b-4e0d-a918-79e01a307984",
+        "02779da3-3f16-4261-852b-02d6bff72730",
+        "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+        "43ac3ed5-e17b-4604-9e14-13d5d6888088"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "树"
+        },
+        {
+          "type": "DESC",
+          "data": "树和链表一样，不能随机访问，别忘了链表是一种特殊的树。 数组你直接给一个初始内存地址就可以随机访问了， 链表和树除了要给初始的，还要根据 next 或者 left right 等 指针去访问。普通打印数组 arr\\[i\\] 只打印自己\n\n打印链表  print\\(root\\) 还会把它的儿孙子们打出来 ， 全家人\n\n给你一个树，返回 root，返回 root.left, 返回  root.left.left（图）\n\n树的题无ta唯递归尔。，一个不行，就两个。\n\n树的题目通过率都很高？\n树的都喜欢递归？\n和链表一样也要注意边界，但是一般树没有死循环？why？\n\n几个有意思的事实。\n截图我的探索和树专题给大家看\n\n树的其他问题也不在讨论， 比如打家劫舍的 树上 dp\n\n像这种平衡树，线段树在低头。好的，其实不多的，大家可以根据自己的情况来掌握，我就不在这里展开了，我这里只讲一些。出现频率很高的大多数人比较关心的这种题型以及应对技巧\n\n前缀树堆，我就。不仔细讲了。这考的也不多，然后前面数的话，大家可以去看我的专题。对于的话，基本上你可以用内置的去写就好了，问题不大。就刷题而言。\n\n【看动画轻松理解「堆」 \\- 今日头条】https://m.toutiao.com/is/JHmQkG1/\n\n\n![](blob:vscode-webview://a3f777b4-aebf-4fac-b4c8-146c481298ae/dacbb6c4-5f5f-4891-8a3a-8bb9628f1c14)\n\n你看能和树抗衡的专题有几个？"
+        }
+      ]
+    },
+    {
+      "key": "c3144c6e-bb5f-4b89-9c94-09124eb916ab",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "dfs(root)"
+        },
+        {
+          "type": "DESC",
+          "data": "def dfs\\(root\\) 要比 def dfs\\(node\\)要好。别问我为啥，其实我好几次都是因为拼错，费时间。为啥叫 root 也符合递归的思维， 因为再当前递归内，”current “其实就是 root 。 这就是递归的妙处（图）"
+        }
+      ]
+    },
+    {
+      "key": "73cb7e14-7e9a-47e8-8095-8b5085a0cb51",
+      "parentKey": "02779da3-3f16-4261-852b-02d6bff72730",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "搜索类"
+        },
+        {
+          "type": "DESC",
+          "data": "二叉树 距离，树的距离可以写一下  863 和youtube 亚洲小伙那个模拟面试。树的距离其实就是最短距离，因此可以用 queue bfs 模板，但是需要加一个parent 指针。\nclass Solution\\(object\\):\n```\ndef distanceK(self, root, target, K):\n    def dfs(node, par = None):\n        if node:\n            node.par = par\n            dfs(node.left, node)\n            dfs(node.right, node)\n\n    dfs(root)\n\n    queue = collections.deque([(target, 0)])\n    seen = {target}\n    while queue:\n        if queue[0][1] == K:\n            return [node.val for node, d in queue]\n        node, d = queue.popleft()\n        for nei in (node.left, node.right, node.par):\n            if nei and nei not in seen:\n                seen.add(nei)\n                queue.append((nei, d+1))\n\n    return []\n\n```\n\n\n如果你不想新建一个 TreeNode ， 可以字典。 key 是 node 引用， value 是你想记录的东西， 一样 的哦。动态语言可以直接加， 定义都不需要的"
+        }
+      ]
+    },
+    {
+      "key": "b6a93ed3-7ac9-4cf0-9555-b79b5b8c2df9",
+      "parentKey": "02779da3-3f16-4261-852b-02d6bff72730",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "构建类"
+        },
+        {
+          "type": "DESC",
+          "data": "我写的专题 \\+ #894#919 。二茶树构造系列又多了一种玩法，就是某一种。遍历序列方式，再加上他是二叉搜索树，这样一个条件就可以构造\n:https://leetcode\\-cn.com/problems/maximum\\-binary\\-tree/\n序列化和反序列化"
+        }
+      ]
+    },
+    {
+      "key": "1b30a7ce-497e-43f1-a7c0-31de9db4a572",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "边界"
+        },
+        {
+          "type": "DESC",
+          "data": "两种最常见。 if not root:\n```\n        return \\[\\]\n    if not root.left and not root.right:\n        return \\[0\\]\n\n```\nif not root: xxx\n\n剩下就不用判 root 空了，多带劲\n\n#998\n\n\n这是搜索类， 构建就比较麻烦了，  修改类有时候可以考虑虚拟节点。发现自己老是边界考虑不到，首先要知道这是正常的，人类的本能。 大家要克服这种本能， 只有多做，慢慢就能克服。 就像改一个坏习惯一样，除了坚持，一个有用的技巧是奖励和惩罚，我也用过这个技巧。\n\n比如 1008 刚开始我就少考虑了：\n\nclass Solution:\n```\ndef bstFromPreorder(self, preorder: List[int]) -> TreeNode:\n    def dfs(start, end):\n        if start > end:\n            return None\n        if start == end:\n            return TreeNode(preorder[start])\n        root = TreeNode(preorder[start])\n        mid = -1\n        for i in range(start + 1, end + 1):\n            if preorder[i] > preorder[start]:\n                mid = i\n                break\n        if mid == -1:\n            return None\n\n        root.left = dfs(start + 1, mid - 1)\n        root.right = dfs(mid, end)\n        return root\n\n    return dfs(0, len(preorder) - 1)\n\n```\n没判断 start == end\n\n上面1008代码是错的，这个是对的：\n\nclass Solution:\n```\ndef bstFromPreorder(self, preorder: List[int]) -> TreeNode:\n    def dfs(start, end):\n\n        if start > end:\n            return None\n        if start == end:\n            return TreeNode(preorder[start])\n        root = TreeNode(preorder[start])\n        mid = -1\n        for i in range(start + 1, end + 1):\n            if preorder[i] > preorder[start]:\n                mid = i\n                break\n\n        if mid == -1:\n            root.right = None\n            root.left = dfs(start + 1, end)\n        else:\n            root.right = dfs(mid, end)\n            root.left = dfs(start + 1, mid - 1)\n\n        return root\n\n    return dfs(0, len(preorder) - 1)\n\n```\n\n\nhasPathSum"
+        }
+      ]
+    },
+    {
+      "key": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [
+        "ea9b2e10-faee-496e-aa51-5d9c69ce18e9",
+        "8f286126-ef4f-4458-baf3-f3fe85f7578a",
+        "ad15978b-2611-451c-a9f5-0e8fc4110b01",
+        "9ad9512e-7879-4e26-a190-2e8fc8a9512f",
+        "1b30a7ce-497e-43f1-a7c0-31de9db4a572",
+        "c3144c6e-bb5f-4b89-9c94-09124eb916ab",
+        "23a596a1-3fc6-4fbe-afa0-2c07bec76a15"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "七个技巧"
+        }
+      ]
+    },
+    {
+      "key": "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [
+        "55fc18ea-8b2b-4fab-ac88-e693f4bd12fb",
+        "8f4d4be1-0a5f-449d-960e-be1435b10fea",
+        "e8c8b510-b90f-40d0-a9af-dc0721f63a3a",
+        "b6b62421-1d84-46a5-b1bc-cd8f096b410b"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "四个重要概念"
+        }
+      ]
+    },
+    {
+      "key": "e8c8b510-b90f-40d0-a9af-dc0721f63a3a",
+      "parentKey": "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "路径"
+        },
+        {
+          "type": "DESC",
+          "data": "力扣有一个 hard 的路径和也是一样的。 124"
+        }
+      ]
+    },
+    {
+      "key": "414149fb-5f10-44b5-88ee-a05d75cda2ec",
+      "parentKey": "5bd99801-c126-40ef-98e2-ef0633651105",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "DFS"
+        }
+      ]
+    },
+    {
+      "key": "5bd99801-c126-40ef-98e2-ef0633651105",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [
+        "e5e36abe-a948-4f51-84de-1d77df5fcc06",
+        "414149fb-5f10-44b5-88ee-a05d75cda2ec"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "两个基本点"
+        },
+        {
+          "type": "DESC",
+          "data": "dfs 和 bfs. dfs 做层次遍历。 层次遍历和bfs 是完全不一样的东西。需要标记层的 bfs 模板 和  不需要标记层的 bfs 模板。\n\n前中后递归简单，迭代用三个标记。 层次用 dfs 可以， 也可以 queue，queue 有两个模板，一个需要 steps 一个不需要\n\n给定一个二叉树，在树的最后一行找到最左边的值。  不就一个 bfs 模板？（513）"
+        }
+      ]
+    },
+    {
+      "key": "ea9b2e10-faee-496e-aa51-5d9c69ce18e9",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "单/双递归"
+        },
+        {
+          "type": "DESC",
+          "data": "如果答案可能不是以某一个具体点，比如root的。 则可能是双递归的套路，比如 https://leetcode\\-cn.com/problems/paths\\-with\\-sum\\-lcci/ 。 力扣有一个 hard 的路径和也是一样的。  #563\n\n树的题无ta唯递归尔。，一个不行，就两个。\n\n递归用 js 大会的图"
+        }
+      ]
+    },
+    {
+      "key": "e5e36abe-a948-4f51-84de-1d77df5fcc06",
+      "parentKey": "5bd99801-c126-40ef-98e2-ef0633651105",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "BFS"
+        }
+      ]
+    },
+    {
+      "key": "55fc18ea-8b2b-4fab-ac88-e693f4bd12fb",
+      "parentKey": "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "二叉搜索树"
+        },
+        {
+          "type": "DESC",
+          "data": "dfs\\(root, float\\('\\-inf'\\), float\\('inf'\\)\\)\nclass Solution:\n```\ndef minDiffInBST(self, root):\n     # 不包含\n    def dfs(node, lower, upper):\n        if not node:\n            return upper - lower\n        left = dfs(node.left, lower, node.val)\n        right = dfs(node.right, node.val, upper)\n        return min(left, right)\n    return dfs(root, float('-inf'), float('inf')\n\n```\n\n树的最大差和最小差的套路， 如果是BST, 时间复杂度是 h 如果是普通的话， 是 N\n\nclass Solution:\n```\ndef maxAncestorDiff(self, root: TreeNode) -> int:\n    def dfs(root, lower, upper):\n        if not root:\n            return upper - lower\n        return max(dfs(root.left, min(root.val, lower), max(root.val, upper)), dfs(root.right, min(root.val, lower), max(root.val, upper)))\n    return dfs(root, float('inf'), float('-inf'))\n\n```\n\n把好像搜索树的二分法和数组的二分法。结合起来理解，此处应该有图。"
+        }
+      ]
+    },
+    {
+      "key": "4b7c6dab-6287-4893-893c-e313be309e60",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "一个中心"
+        },
+        {
+          "type": "DESC",
+          "data": "一个中心就是树的遍历，二叉树的迭代写法有多重要，你知道吗？如果你会了这个。你平时练习大，可用递归。然后面试的时候，假如说，你真的需要迭代。那你就套。二叉树的遍历的迭代就可以了。或者是对性能有特别要求的那种题目，你也可以套\n\n\n二色标记法，牛逼。 不追求极致的同学使用， 追求极致你为啥不都用 morris 呢？\n\n用迭代。去。实现递归其实很简单，无非就是还是用递归思想，只不过你把递归体道威尔循环里边而已，就这么简单"
+        }
+      ]
+    },
+    {
+      "key": "b6b62421-1d84-46a5-b1bc-cd8f096b410b",
+      "parentKey": "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "距离"
+        },
+        {
+          "type": "DESC",
+          "data": "863   youtube 博主"
+        }
+      ]
+    },
+    {
+      "key": "9ad9512e-7879-4e26-a190-2e8fc8a9512f",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "返回元组/列表"
+        },
+        {
+          "type": "DESC",
+          "data": "#865 #1530（笛卡尔积）"
+        }
+      ]
+    },
+    {
+      "key": "8f4d4be1-0a5f-449d-960e-be1435b10fea",
+      "parentKey": "a449c8ea-8a1c-42ae-952f-30f2db34b4c1",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "完全二叉树"
+        },
+        {
+          "type": "DESC",
+          "data": "完全二叉树的重要性质：\nUtilize the nature of numbering in complete binary tree Number each node, start from root as 1, 2, 3, …, and so on.\n\nFor each node with of number k, node with \\( 2k \\) is left child node with \\( 2k \\+ 1 \\) is right child\n\n序列化那道题"
+        }
+      ]
+    },
+    {
+      "key": "38d0462a-baf6-4bb6-8cac-25e5a1ec810f",
+      "parentKey": "02779da3-3f16-4261-852b-02d6bff72730",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "修改类"
+        },
+        {
+          "type": "DESC",
+          "data": "比如插入，删除或者增加指针（863）等。二叉树的删除：https://leetcode\\-cn.com/problems/delete\\-node\\-in\\-a\\-bst/              和 #450\n\n修改指针典型的是加parent 和 右侧指针（116）\n\n二叉树的指针修改 trim\\-a\\-binary\\-search\\-tree/"
+        }
+      ]
+    },
+    {
+      "key": "23a596a1-3fc6-4fbe-afa0-2c07bec76a15",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "参数扩展法"
+        },
+        {
+          "type": "DESC",
+          "data": "def dfs\\(root, parent,target, d\\):    好叶子的题，扩展参数算一个技巧吧，比如说对称二叉树"
+        }
+      ]
+    },
+    {
+      "key": "8f286126-ef4f-4458-baf3-f3fe85f7578a",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "前后遍历"
+        },
+        {
+          "type": "DESC",
+          "data": "更形象地说，这个其实是自顶向下或者自底向上.  比如  https://leetcode\\-cn.com/problems/paths\\-with\\-sum\\-lcci/ 和 [https://leetcode\\-cn.com/problems/sum\\-root\\-to\\-leaf\\-numbers/](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/)\n\n嗯。大多数题都可以后序遍历比较简单，但是有少的问题是需要钱去的，举个简单例子就是1448这样子。\n\n\n\n“自顶向下” 意味着在每个递归层级，我们将首先访问节点来计算一些值，并在递归调用函数时将这些值传递到子节点。 所以 “自顶向下” 的解决方案可以被认为是一种前序遍历。一般是将数组通过参数透传到子树中\n\n比如：\n\n1. return if root is null\n1. if root is a leaf node:\n1. answer = max\\(answer, depth\\)         // update the answer if needed\n1. maximum\\_depth\\(root.left, depth \\+ 1\\)      // call the function recursively for left child\n1. maximum\\_depth\\(root.right, depth \\+ 1\\)  // call the function recursively for right child\n\n\n\nprivate int answer;  // don't forget to initialize answer before call maximum\\_depth\nprivate void maximum\\_depth\\(TreeNode root, int depth\\) \\{\n```\nif (root == null) {\n    return;\n}\nif (root.left == null && root.right == null) {\n    answer = Math.max(answer, depth);\n}\nmaximum_depth(root.left, depth + 1);\nmaximum_depth(root.right, depth + 1);\n\n```\n\\}\n\n底向上” 是另一种递归方法。 在每个递归层次上，我们首先对所有子节点递归地调用函数，然后根据返回值和根节点本身的值得到答案。 这个过程可以看作是后序遍历的一种\npublic int maximum\\_depth\\(TreeNode root\\) \\{\n if \\(root == null\\) \\{\n  return 0;                                   // return 0 for null node\n \\}\n int left\\_depth = maximum\\_depth\\(root.left\\);\n int right\\_depth = maximum\\_depth\\(root.right\\);\n return Math.max\\(left\\_depth, right\\_depth\\) \\+ 1; // return depth of the subtree rooted at root\n\\}\n当遇到树问题时，请先思考一下两个问题：\n\n你能确定一些参数，从该节点自身解决出发寻找答案吗？\n你可以使用这些参数和节点本身的值来决定什么应该是传递给它子节点的参数吗？\n如果答案都是肯定的，那么请尝试使用 “自顶向下” 的递归来解决此问题。\n\n或者你可以这样思考：对于树中的任意一个节点，如果你知道它子节点的答案，你能计算出该节点的答案吗？ 如果答案是肯定的，那么 “自底向上” 的递归可能是一个不错的解决方法。\n\n\n先序遍历大家用 https://leetcode\\-cn.com/problems/sum\\-of\\-root\\-to\\-leaf\\-binary\\-numbers/ 这个练一下就行\n\n\n"
+        }
+      ]
+    },
+    {
+      "key": "ad15978b-2611-451c-a9f5-0e8fc4110b01",
+      "parentKey": "58ec1823-2b0b-4e0d-a918-79e01a307984",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "虚拟节点"
+        },
+        {
+          "type": "DESC",
+          "data": "#814#1325"
+        }
+      ]
+    },
+    {
+      "key": "02779da3-3f16-4261-852b-02d6bff72730",
+      "parentKey": "06f44de7-aa3e-45d4-9ce9-fe124ae6fb3c",
+      "subKeys": [
+        "73cb7e14-7e9a-47e8-8095-8b5085a0cb51",
+        "b6a93ed3-7ac9-4cf0-9555-b79b5b8c2df9",
+        "38d0462a-baf6-4bb6-8cac-25e5a1ec810f"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "三种题型"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "readOnly": false,
+    "allowUndo": true,
+    "layoutDir": 2,
+    "theme": {
+      "name": "theme3",
+      "randomColor": false,
+      "background": "#A9DEF9",
+      "highlightColor": "#50C9CE",
+      "marginH": 50,
+      "marginV": 20,
+      "contentStyle": {
+        "lineHeight": "1.5"
+      },
+      "linkStyle": {
+        "lineRadius": 5
+      },
+      "rootTopic": {
+        "contentStyle": {
+          "background": "#FF99C8",
+          "color": "#fff",
+          "fontSize": "34px",
+          "borderRadius": "5px",
+          "padding": "16px 18px 16px 18px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "primaryTopic": {
+        "contentStyle": {
+          "background": "#FCF6BD",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "borderColor": "#E4C1F9",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "14px",
+          "padding": "6px 10px 5px 10px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "normalTopic": {
+        "contentStyle": {
+          "background": "#E4FDE1",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "13px",
+          "padding": "3px 9px 4px",
+          "boxShadow": "1px 1px 1px #ccc"
+        },
+        "subLinkStyle": {
+          "lineType": "round",
+          "lineRadius": 5,
+          "lineWidth": "1px",
+          "lineColor": "#43a9ff"
+        }
+      }
+    }
+  },
+  "formatVersion": "0.0"
+}

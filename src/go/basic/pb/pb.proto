@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+message req {
+  string group = 1;
+  string key = 2;
+}
+
+message resp {
+  bytes value  = 1;
+}

@@ -1,0 +1,347 @@
+{
+  "rootTopicKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+  "editorRootTopicKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+  "focusKey": "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+  "extData": {
+    "TOPIC_REFERENCE": {
+      "reference": {}
+    }
+  },
+  "topics": [
+    {
+      "key": "48bf9dd6-62fa-4941-a3f6-5de9ceecf753",
+      "parentKey": "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "多路归并"
+        },
+        {
+          "type": "DESC",
+          "data": "heap 元组 是一个常见的有用的技巧， 类似树里面的返回元组\n\n我不管，我就把候选者丢给堆，ta 帮我算好，我取就得了。\n1054   767 373  1439（逻辑树）   632 1675 786 \n\n都画逻辑树帮助理解，以 1439 为例讲\n\n```python\nclass Solution:\n    def smallestDistancePair(self, nums, k):\n        nums.sort()\n        heap = [(nums[i+1] - nums[i], i, i+1)\n                for i in range(len(nums) - 1)]\n        heapq.heapify(heap)\n\n        for _ in range(k):\n            d, root, nei = heapq.heappop(heap)\n            if nei + 1 < len(nums):\n                heapq.heappush(heap, (nums[nei + 1] - nums[root], root, nei + 1))\n\n        return d\n\n```\n"
+        }
+      ]
+    },
+    {
+      "key": "6a467881-57ea-4482-8511-f35f08021c79",
+      "parentKey": "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "事后小诸葛"
+        },
+        {
+          "type": "DESC",
+          "data": "871 [https://leetcode\\-cn.com/problems/minimum\\-number\\-of\\-refueling\\-stops/](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/)\n1488 [https://leetcode\\-cn.com/problems/avoid\\-flood\\-in\\-the\\-city/](https://leetcode-cn.com/problems/avoid-flood-in-the-city/)\n1642 [https://leetcode\\-cn.com/problems/furthest\\-building\\-you\\-can\\-reach/](https://leetcode-cn.com/problems/furthest-building-you-can-reach/)\n\n\nfrom left to right 你是不知道 right 会发生啥的，所以你到了 right 之后再从 heap 取 left（时光机）达到诸葛亮的目的"
+        }
+      ]
+    },
+    {
+      "key": "a274c003-415b-46f9-95c3-dfb415fa1e76",
+      "parentKey": "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "固定堆"
+        },
+        {
+          "type": "DESC",
+          "data": "857 维护一个大小为 k 的堆  857  求中位数是维护两个 n /2 的大小堆\n中位数 [https://leetcode\\-cn.com/problems/continuous\\-median\\-lcci/](https://leetcode-cn.com/problems/continuous-median-lcci/)  [https://leetcode\\-cn.com/problems/shu\\-ju\\-liu\\-zhong\\-de\\-zhong\\-wei\\-shu\\-lcof/](https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/)  [https://leetcode\\-cn.com/problems/find\\-median\\-from\\-data\\-stream/](https://leetcode-cn.com/problems/find-median-from-data-stream/)\n\n"
+        }
+      ]
+    },
+    {
+      "key": "5277a111-6987-49f9-9286-db4221c8702a",
+      "parentKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "subKeys": [
+        "82733067-efc3-46e0-b7f9-346d1c6e5b5a",
+        "543d42e5-a28b-4f8f-bc06-35a9bed97a5f"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "两种实现"
+        }
+      ]
+    },
+    {
+      "key": "a0cc70ac-6cfb-496e-af6d-95f989d190a0",
+      "parentKey": "78f0274b-3f18-4b70-983a-7e822ebcbe4f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "带权最短距离"
+        },
+        {
+          "type": "DESC",
+          "data": "disj 算法\n\n上模板\n\n787\n743 [https://leetcode\\-cn.com/problems/network\\-delay\\-time/](https://leetcode-cn.com/problems/network-delay-time/)\n882"
+        }
+      ]
+    },
+    {
+      "key": "543d42e5-a28b-4f8f-bc06-35a9bed97a5f",
+      "parentKey": "5277a111-6987-49f9-9286-db4221c8702a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "跳表"
+        }
+      ]
+    },
+    {
+      "key": "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+      "parentKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "subKeys": [
+        "48bf9dd6-62fa-4941-a3f6-5de9ceecf753",
+        "a274c003-415b-46f9-95c3-dfb415fa1e76",
+        "6a467881-57ea-4482-8511-f35f08021c79"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "三个技巧"
+        }
+      ]
+    },
+    {
+      "key": "2a6102e7-4034-4975-9c21-b276de795245",
+      "parentKey": "78f0274b-3f18-4b70-983a-7e822ebcbe4f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "topK"
+        },
+        {
+          "type": "DESC",
+          "data": "面试题 17.14. 最小K个数 [https://leetcode\\-cn.com/problems/smallest\\-k\\-lcci/](https://leetcode-cn.com/problems/smallest-k-lcci/)\n\n[https://leetcode\\-cn.com/problems/top\\-k\\-frequent\\-words/](https://leetcode-cn.com/problems/top-k-frequent-words/)\n[https://leetcode\\-cn.com/problems/kth\\-largest\\-element\\-in\\-an\\-array/](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)\n\n\n\n"
+        }
+      ]
+    },
+    {
+      "key": "78f0274b-3f18-4b70-983a-7e822ebcbe4f",
+      "parentKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "subKeys": [
+        "2a6102e7-4034-4975-9c21-b276de795245",
+        "a0cc70ac-6cfb-496e-af6d-95f989d190a0",
+        "3d525029-d44e-483a-bade-09394570589b",
+        "32cead10-a565-43ef-b8f5-d2080bf60d04"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "四大应用"
+        }
+      ]
+    },
+    {
+      "key": "82733067-efc3-46e0-b7f9-346d1c6e5b5a",
+      "parentKey": "5277a111-6987-49f9-9286-db4221c8702a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "二叉堆"
+        },
+        {
+          "type": "DESC",
+          "data": "手写二叉堆堆不难， 只要你会递归，会分治。 和手写线段树，写构造二叉树差不多、\n\n二叉堆就是一个完全二叉树， 树专题我还反复强调了完全二叉树真的很有用， 二叉堆就是其中之一。"
+        }
+      ]
+    },
+    {
+      "key": "3d525029-d44e-483a-bade-09394570589b",
+      "parentKey": "78f0274b-3f18-4b70-983a-7e822ebcbe4f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "因子分解"
+        },
+        {
+          "type": "DESC",
+          "data": "[https://leetcode\\-cn.com/problems/super\\-ugly\\-number/](https://leetcode-cn.com/problems/super-ugly-number/)\n\n1. 丑数 II  [https://leetcode\\-cn.com/problems/ugly\\-number\\-ii/](https://leetcode-cn.com/problems/ugly-number-ii/)\n\n\n\n1. 丑数 III [https://leetcode\\-cn.com/problems/ugly\\-number\\-iii/](https://leetcode-cn.com/problems/ugly-number-iii/)\n\n\n方法都是接力法\n"
+        }
+      ]
+    },
+    {
+      "key": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "parentKey": null,
+      "subKeys": [
+        "cb3d266e-f428-433d-83d9-e9b2021fd537",
+        "5277a111-6987-49f9-9286-db4221c8702a",
+        "f84ad260-6f7d-4d59-bb52-6465ba597780",
+        "ee5f81e3-d6a1-4e0e-98dd-96baa8b6ea9c",
+        "78f0274b-3f18-4b70-983a-7e822ebcbe4f"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "堆"
+        },
+        {
+          "type": "DESC",
+          "data": "不严格地说，堆就是优先队列，和普通队列没有什么大的不同。所以heap其实有点像bfs 看看882题.。\n\n队列可以看出时间是优先级的优先队列,优先队列更加高级，除了时间还可以是别的维度，逻辑支持定制化\n\n这是为什么呢？原因很简单，因为BFs需要用到队列。堆是一种优先队列，你明白了吗？这其实就很巧了，就说明堆要比BFs那个队列要更牛逼。他可以做到的事情。对，都可以做，比如说数的广度优先遍历那屋其实就一个堆我也可以完成呀，每次我们这个队的优先级都是递增的而已，虽然你会发现这个其实没有必要用，对，因为我们根本没有必要用这个。对嘛，徒增烦恼、我用堆去作BFs就是脱了裤子放屁没意思，对不对？但是如果边带权重就不一样了。但是你要懂，你要懂这两个其实是很像的。只是我们没有必要只脱了裤子放屁而已\n\n两种优先遍历大家可以用一个那种魔兽争霸的那种战争阴影的这个例子我觉得挺不错的。\n\n很多文章都是把实现放在第一位，先讲实现了再整，用我的话恰恰相反，先讲应用。你先知道这一篇就行了，实现先不管，然后到最后的话，我们再怎么想实现\n\n1201 也可以堆，不过会超时， 可以用二分优化， 这个超出了专题内容， 暂且不提，期待下期。有些题 堆过不了，必须使用二分才行， 却归到堆， 不讲武德， 比如 719\n\n你自己想象你把这些放到一个袋子中， 不关心怎么实现。 反正你每次往这个神奇的代码中伸手去拿，就能拿到最大的或者最小的。\n\n这个神奇的代码怎么实现呢？ 排序就行， 不排序呢？\n\n* 第三大的数， 动态 vs 静态。 最大的被移除了，那第二大的是？ 堆核心解决的就是这个问题， 比如 218\n\n\n* 两个有序合并简单，k 个呢 用堆呀，k 问题就是 dfs 或者 heap 不然代码不好写啊\n\n"
+        }
+      ]
+    },
+    {
+      "key": "f84ad260-6f7d-4d59-bb52-6465ba597780",
+      "parentKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "其他题目推荐"
+        },
+        {
+          "type": "DESC",
+          "data": "659"
+        }
+      ]
+    },
+    {
+      "key": "32cead10-a565-43ef-b8f5-d2080bf60d04",
+      "parentKey": "78f0274b-3f18-4b70-983a-7e822ebcbe4f",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "堆排序"
+        }
+      ]
+    },
+    {
+      "key": "cb3d266e-f428-433d-83d9-e9b2021fd537",
+      "parentKey": "f6141452-7940-4556-aa3a-1d8c27165858",
+      "subKeys": [
+        "c7f29e45-771e-480b-ae60-1432cb0141d3"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "一个中心"
+        }
+      ]
+    },
+    {
+      "key": "c7f29e45-771e-480b-ae60-1432cb0141d3",
+      "parentKey": "cb3d266e-f428-433d-83d9-e9b2021fd537",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "动态求极值"
+        },
+        {
+          "type": "DESC",
+          "data": "1046\n\n动态求极值 \\- 堆\n动态求区间信息（比如区间和） 线段树。\n\n关键字是动态"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "readOnly": false,
+    "allowUndo": true,
+    "layoutDir": 2,
+    "theme": {
+      "name": "theme3",
+      "randomColor": false,
+      "background": "#A9DEF9",
+      "highlightColor": "#50C9CE",
+      "marginH": 50,
+      "marginV": 20,
+      "contentStyle": {
+        "lineHeight": "1.5"
+      },
+      "linkStyle": {
+        "lineRadius": 5
+      },
+      "rootTopic": {
+        "contentStyle": {
+          "background": "#FF99C8",
+          "color": "#fff",
+          "fontSize": "34px",
+          "borderRadius": "5px",
+          "padding": "16px 18px 16px 18px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "primaryTopic": {
+        "contentStyle": {
+          "background": "#FCF6BD",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "borderColor": "#E4C1F9",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "14px",
+          "padding": "6px 10px 5px 10px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "normalTopic": {
+        "contentStyle": {
+          "background": "#E4FDE1",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "13px",
+          "padding": "3px 9px 4px",
+          "boxShadow": "1px 1px 1px #ccc"
+        },
+        "subLinkStyle": {
+          "lineType": "round",
+          "lineRadius": 5,
+          "lineWidth": "1px",
+          "lineColor": "#43a9ff"
+        }
+      }
+    }
+  },
+  "formatVersion": "0.0"
+}

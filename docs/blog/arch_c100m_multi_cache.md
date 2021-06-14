@@ -1,0 +1,41 @@
+# 亿级流量多级缓存架构解决方案
+
+- 客户端缓存 http cache
+- 流量接入缓存层
+  - HTTPDNS Waf/全网CDN(流量清洗)
+  - 硬防火墙
+  - 完成流量清洗、分发
+- 应用接入缓存层
+  - Nginx静态文件缓存 Nginx动态数据缓存 Openresty/Lua-resty-lrucache URL定向缓存请求转发
+  - Kafka异步日志分析
+  - 单点登录系统
+- 应用缓存层
+  - Redis Cluster集群; c100k; 容灾演练 CacheAsidePattern
+  - LFU、LRU、ARC、FIFO、MRU
+  - bloomFilter 命中率-分层 穿透 预热/更新(kafka异步)
+- Kafka集群 异步更新缓存数据、写DB、高优先级事件
+  - Zookeeper集群
+- 应用业务层
+  - 集群/单机限流 hystrix(资源隔离+限流+熔断+降级+运维监控)
+  - 风控防刷
+  - SpringCloud
+  - Flink
+  - Spark
+- 数据持久层
+  - Mysql集群 高压 动态扩容
+  - MyCat
+- other
+  - log/err/exception 6个9 acid cap原则 base原则
+  - JVM EHcache; linux内核优化 docker
+
+- nginx+lua
+- 客户端缓存
+- 资源隔离服务降级
+- 服务限流
+- 扩容
+- 服务降级
+- 分布式事务
+- 阿里云实战
+- 网关
+- 电商详情页开发实战
+- 静态文件生成方案

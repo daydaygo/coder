@@ -1,0 +1,53 @@
+version: '3.1'
+networks:
+  default:
+    external:
+      # 172.19.0.0/16
+      name: docker_default
+services:
+  zookeeper:
+    image: zookeeper
+    ports:
+      - "2181:2181"
+  kafka1:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # 使用不同端口
+      # KAFKA_LISTENERS: "PLAINTEXT://:9092"
+      # KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://127.0.0.1:9092"
+  kafka2:
+    image: wurstmeister/kafka
+    ports:
+      - "9093:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  kafka3:
+    image: wurstmeister/kafka
+    ports:
+      - "9094:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  kafka-manager:
+    image: sheepkiller/kafka-manager
+    ports:
+      - "9090:9000"
+    depends_on:
+      - kafka1
+      - kafka2
+      - kafka3
+      - zookeeper
+    environment:
+      ZK_HOSTS: zookeeper:2181
+      KAFKA_BROKERS: kafka1:9092,kafka2:9092,kafka3:9092

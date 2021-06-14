@@ -1,0 +1,302 @@
+{
+  "rootTopicKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+  "editorRootTopicKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+  "focusKey": "84175ef4-382f-4028-91fb-07491ed122a7",
+  "extData": {},
+  "topics": [
+    {
+      "key": "d9a28b52-e4a1-4129-9b00-4063fed98bde",
+      "parentKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+      "subKeys": [
+        "ae0db502-8dad-41ac-badf-ed4e2335014f",
+        "7e78b82d-a897-4031-8755-a05603a276e2",
+        "84175ef4-382f-4028-91fb-07491ed122a7"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "三个注意"
+        }
+      ]
+    },
+    {
+      "key": "2290a17d-2736-4ad7-aa1c-38d6abdf8e88",
+      "parentKey": "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "快慢指针"
+        }
+      ]
+    },
+    {
+      "key": "ae0db502-8dad-41ac-badf-ed4e2335014f",
+      "parentKey": "d9a28b52-e4a1-4129-9b00-4063fed98bde",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "环"
+        },
+        {
+          "type": "DESC",
+          "data": "题目本身就有环，90% 就双指针。题目没环，那就仔细画图，有环立马就能发现。画图其实只要画最小子结构就行了。"
+        }
+      ]
+    },
+    {
+      "key": "4a42c6e6-0b25-4256-81f7-25b009fc3fe6",
+      "parentKey": "ef46331b-6b91-46e3-b586-48521db0cd68",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "拼接链表"
+        },
+        {
+          "type": "DESC",
+          "data": "abcd大法，也叫穿针引线法。"
+        }
+      ]
+    },
+    {
+      "key": "7e78b82d-a897-4031-8755-a05603a276e2",
+      "parentKey": "d9a28b52-e4a1-4129-9b00-4063fed98bde",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "边界"
+        },
+        {
+          "type": "DESC",
+          "data": "头和尾。 由于链表删除是要有前驱节点的，因此如果删除第一个怎么办？另外链表无法直接拿到最后一个节点，因此尾部节点有时也也要特殊判断。 总之一句话就是头尾特殊判断， 头部可以用虚拟节点巧妙处理。"
+        }
+      ]
+    },
+    {
+      "key": "536eb847-dc98-447c-ad02-f68bfe9b2882",
+      "parentKey": "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "先穿再排后判空"
+        }
+      ]
+    },
+    {
+      "key": "7ff2a8d5-2a47-4193-88f3-b761746ec07d",
+      "parentKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "一个原则 "
+        },
+        {
+          "type": "DESC",
+          "data": "新手一定画图"
+        }
+      ]
+    },
+    {
+      "key": "0df98e14-f225-48d0-93a1-1bfd9f9b3168",
+      "parentKey": "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "虚拟头"
+        }
+      ]
+    },
+    {
+      "key": "ef46331b-6b91-46e3-b586-48521db0cd68",
+      "parentKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+      "subKeys": [
+        "f22073a4-ae44-4aca-91b5-42ff22eea8c6",
+        "4a42c6e6-0b25-4256-81f7-25b009fc3fe6"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "两个考点"
+        }
+      ]
+    },
+    {
+      "key": "84175ef4-382f-4028-91fb-07491ed122a7",
+      "parentKey": "d9a28b52-e4a1-4129-9b00-4063fed98bde",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "前后序"
+        },
+        {
+          "type": "DESC",
+          "data": "如果你用递归的话， 就要考虑是前序还是后续。前序就是前面已经处理完了，你要做的是处理后面。但是后面怎么处理你不用管，你要思考的如何处理当前节点以及建立当前节点和后面节点的联系， 后续遍历同理"
+        }
+      ]
+    },
+    {
+      "key": "b092ce8f-2efc-49ab-a74d-92741f71951b",
+      "parentKey": "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "穿针引线"
+        }
+      ]
+    },
+    {
+      "key": "f22073a4-ae44-4aca-91b5-42ff22eea8c6",
+      "parentKey": "ef46331b-6b91-46e3-b586-48521db0cd68",
+      "subKeys": [],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "修改指针"
+        },
+        {
+          "type": "DESC",
+          "data": "修改指针最经典的就是反转了。反转和删除需要记录前驱指针"
+        }
+      ]
+    },
+    {
+      "key": "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+      "parentKey": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+      "subKeys": [
+        "0df98e14-f225-48d0-93a1-1bfd9f9b3168",
+        "2290a17d-2736-4ad7-aa1c-38d6abdf8e88",
+        "b092ce8f-2efc-49ab-a74d-92741f71951b",
+        "536eb847-dc98-447c-ad02-f68bfe9b2882"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": "四个技巧"
+        }
+      ]
+    },
+    {
+      "key": "a1a37fe1-e55b-4d3a-9576-58e464482549",
+      "parentKey": null,
+      "subKeys": [
+        "7ff2a8d5-2a47-4193-88f3-b761746ec07d",
+        "ef46331b-6b91-46e3-b586-48521db0cd68",
+        "6cf92565-a5d5-4b7e-9c0d-e44d3759d23a",
+        "d9a28b52-e4a1-4129-9b00-4063fed98bde"
+      ],
+      "collapse": false,
+      "style": null,
+      "blocks": [
+        {
+          "type": "CONTENT",
+          "data": " 链表"
+        },
+        {
+          "type": "DESC",
+          "data": "文章地址：[https://lucifer.ren/blog/2020/11/08/linked\\-list/](https://lucifer.ren/blog/2020/11/03/monotone-stack/)"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "readOnly": false,
+    "allowUndo": true,
+    "layoutDir": 2,
+    "theme": {
+      "name": "theme3",
+      "randomColor": false,
+      "background": "#A9DEF9",
+      "highlightColor": "#50C9CE",
+      "marginH": 50,
+      "marginV": 20,
+      "contentStyle": {
+        "lineHeight": "1.5"
+      },
+      "linkStyle": {
+        "lineRadius": 5
+      },
+      "rootTopic": {
+        "contentStyle": {
+          "background": "#FF99C8",
+          "color": "#fff",
+          "fontSize": "34px",
+          "borderRadius": "5px",
+          "padding": "16px 18px 16px 18px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "primaryTopic": {
+        "contentStyle": {
+          "background": "#FCF6BD",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "borderColor": "#E4C1F9",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "14px",
+          "padding": "6px 10px 5px 10px"
+        },
+        "subLinkStyle": {
+          "lineType": "curve",
+          "lineWidth": "2px",
+          "lineColor": "#43a9ff"
+        }
+      },
+      "normalTopic": {
+        "contentStyle": {
+          "background": "#E4FDE1",
+          "borderRadius": "5px",
+          "color": "rgb(103,103,103)",
+          "fontSize": "13px",
+          "padding": "3px 9px 4px",
+          "boxShadow": "1px 1px 1px #ccc"
+        },
+        "subLinkStyle": {
+          "lineType": "round",
+          "lineRadius": 5,
+          "lineWidth": "1px",
+          "lineColor": "#43a9ff"
+        }
+      }
+    }
+  },
+  "formatVersion": "0.0"
+}

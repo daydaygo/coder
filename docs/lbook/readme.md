@@ -1,0 +1,42 @@
+# life book
+
+- 矛盾文学奖 国图.文津图书奖 [古籍索引](anciant.md) [国家哲学社会科学文献中心](http://www.ncpssd.org)
+
+- learn education read write 学习 教育 阅读 写作
+  - learning how to learn 学会如何学习; 芭芭拉.奥克利 2020.11; [同名mooc](https://www.coursera.org/learn/learning-how-to-learn)
+  - remember it. the names of people you meet, all your passwords, where you left your keys, and everything else you tend to forget; 2018 针对成年人的关于记忆力培养的最佳书籍
+  - mindshift: break through obstacles and discover your hidden potential 思维转换: 突破学习障碍, 发现你的隐蔽潜能; 2017 芭芭拉.奥克利 [同名mooc](https://www.coursera.org/learn/mindshift)
+  - peak: secrets from the new science of expertise 刻意练习: 如何从新手到大师; 2016
+  - deep work: rules for focused success in A distracted world 深度工作: 如何有效使用每一点脑力; 2016
+  - a mind of numbers: how to succeed in math and science 学习之道; Barbara.Oakley 2014
+  - make it stick: the science of successful learning 记住它: 成功学习的科学; 2014
+  - I am gifted, so are you 我是学习天才, 你也是; 2014
+  - the art of learning: an inner journey to optimal performance 学习的艺术: 最佳成绩的内在旅程; 2008
+  - the art of changing the brain: enriching the practice of teaching by exploring the biology of learning 改变大脑的艺术: 通过探究学习的生物学原理来丰富教学实践; 2002
+- 自我成长 self-growth
+  - critical thinking 批判性思维 ed12; 2020.9 布鲁克
+  - principle of economics 经济学原理; 2020.5 曼昆
+  - investments ed10; bodie 2014
+  - Fundamental Accounting Principles ed20; 2010.9
+  - how to think straight about psychology 对伪心理说不; 2012.1
+  - 暗时间 2011.8
+- sci science 学术; subject 学科
+  - The Blackwell Dictionary of Western Philosophy 西方哲学词典; 2009
+  - [Why: A Guide to Finding and Using Causes 别拿相关当因果! 因果关系入门](causation_correlativity.md); 2018.8
+  - 工程经济学; 刘宇 2017.3
+  - 工程管理与工程造价教材: 工程经济学 工程项目管理 安装工程计量与计价 建筑与装饰工程计量 建筑与装饰工程计价 工程招标与合同管理 工程建设法 项目融资
+  - 工程经济学 ed2; 刘玉明 2014.1
+  - 工程管理系列教材: 工程经济学 国际工程管理 工程管理实践教程 工程造价管理 工程项目评估 工程建设监理 建设项目管理 建设工程监理案例分析 建设工程质量与安全控制 建设工程招投标与合同管理 建筑企业管理 建筑工程定额及概预算 房地产开发与经营
+- manage 管理
+  - 下一站,社企? 卢永彬 2018.3; 在中国，商业与公益的30次相遇
+- history历史
+  - 资治通鉴启示录 2019.8
+- party
+  - [毛选 毛泽东选集1-4](maoxuan.md) 2006.11
+  - [马哲 马克思主义基本原理概论](marxism.md) 2018
+  - [中特 中国特色社会主义](zhongte.md) 2018
+  - [自然辩证法](dn.md) 2018
+- other
+  - [一往无前](yiwangwuqian.md); 2020.8
+  - [世间的名字都是秘密](name_secret.md) 苏缨; 2016.6
+  - [他们以为自己很厉害：12个企业管理陷阱](they_think_they_are_very_powerful.md); 2018.11

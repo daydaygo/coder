@@ -1,0 +1,193 @@
+# 编程相关书籍
+
+- 书系: ChinaPub计算机世纪经典系列 headFirst(入门) 图解 definitiveGuide权威指南 cookbook handbook theWayTo inAction [藏经阁—阿里云开发者社区](https://developer.aliyun.com/ebook)
+- php
+  - php安全之道: 项目安全的架构/技术与实践; 栾涛 2019
+  - PHP7底层设计与源码实现; 陈雷 2018
+- go
+  - <https://golang.design>
+    - under the hood go语言原本 2020
+  - github/geektutu
+    - high performance go go语言高性能编程
+    - 7day golang 7天用go语言实现xxx: gin groupCache gorm net/rpc WebAssembly
+  - [Concurrency in Go](co_in_go.md) go语言并发之道; Katherine Cox-Buday 2018
+  - [the go programming language](gopl.md) go程序设计语言; Alan A.A. Donovan & Brian W. Kernighan 2016
+  - Go并发编程实战 ed2; 郝林 2016 github/gopcp/example.v2
+- java
+  - 阿里巴巴Java开发手册; 2020.10
+  - JavaInAction java实战 java8实战 ed2; 2019.12 java8/9/10新特性
+  - 深入理解java虚拟机 ed3; 2019.11
+  - 实战java虚拟机 jvm故障诊断与性能优化 ed2; 2019.7
+  - 疯狂Java讲义 ed5; 2019.4
+  - EffectiveJava ed3; 2018.1 Joshua Bloch 易读+少bug的java
+  - java核心技术 ed10 基础知识+高级特性; 2017.6
+  - java performance: the definitive guide Java性能权威指南; 2016.3
+  - Java并发编程的艺术; 2015.7
+  - Java性能优化权威指南; 2014.3
+  - JavaConcurrencyInPractice java并发编程实战; 2012.2
+  - Java并发编程实践; 2007.6
+  - thinkInJava `java编程思想` ed4; 2007.6
+  - 基于kotlin的spring boot微服务实战; 2020.11
+  - 深入理解ApacheDubbo与实战; 2019.7
+  - spring编程思想(核心篇); 2019.4
+  - SpringCloud微服务实战; 2017.5
+  - SpringCloud与Docker微服务架构实战; 2017.5
+  - 从Paxos到Zookeeper: 分布式一致性原理与实战; 2015.2
+  - spring技术内幕: 深入解析spring架构与设计原理 ed2; 2012.2
+- other
+  - how to think like a computer scientist learning with Python 像计算机科学家一样思考Python; 2016.8
+  - Learn Python the Hard Way 笨办法学Python 2013.10
+  - rust编程之道; 2019.1
+  - JavaScript核心概念及实践; 2013.5
+  - JavaScript Patterns; 2012.7
+  - JavaScript the definitive book 权威指南 ed6; 2012.3
+  - JavaScript: the good parts; Douglas Crockford 2008 不容易出错+易于理解的js
+  - webRTC音视频开发: react+flutter+go实战; 亢少军 2020.9
+  - flutterInAction 闲鱼最佳实践; 2020
+  - flutter技术入门与实践 ed2; 亢少军 2019.10
+  - [PIL](https://www.lua.org/pil) programmingInLua lua程序设计 ed4; 2018.7
+- codeQuality
+  - 编程风格 好代码的逻辑; 2017.8
+  - the art of readable code 编写可读性代码的艺术
+    - 表面: 命名(约定>翻译>省略) 注释 审美
+    - 简化逻辑/循环/变量
+    - 重新组织代码
+    - 思想: **代码要易于理解**(无/短 DRY) -> 测试/大数据
+  - Robert C. Martin Clean Code Collection
+    - Clean Code 代码整洁之道: A Handbook of Agile Software Craftmanship; 2008 可读性(专门为java)/错误处理/并发
+    - Clean Coder: A Code of Conduct for Professional Programmers
+  - code complete 代码大全: a practical handbook of software constructionm, ed2; Steve McConnell 2004 关于代码构建的所有方面
+  - refactoring: improving the design of existing code 重构: 改善既有代码设计; Martin Fowler 1999 **增量代码改进**
+  - the practice of programming; Brian Kernighan & Rob Pike 1999 调试/测试/可移植性/性能
+  - the pragmatic programmer: from journeyman to master; Andrew Hunt & David Thomas 1999 编程和工程原则
+- codeTopic
+  - [Joel on software](https://www.joelonsoftware.com/) 软件工程
+  - high performance web sites 高性能网站建设指南: 前端工程师技能精髓 ed2; Steve Souders 2015.5 **不写代码**优化网站
+  - programming pearls, ed2; Joh Bentley 1999 真实软件问题
+  - 图解设计模式; 2017.1
+  - 大话设计模式; 2007.12
+  - HeadFirst设计模式 2007.9
+  - Design Patterns: Elements of Reusable Object-Oriented Software 设计模式:可复用面向对象软件的基础; GOF 1994 2000.9 通用+有用的模式
+- crypto
+  - [https权威指南读书笔记](https://www.jianshu.com/p/b6719f6606d0)
+  - [openssl](https://www.openssl.org/docs/)
+    - Ivan Ristić
+      - [openssl cookbook ed3](https://www.feistyduck.com/library/openssl-cookbook-3ed/); 2020
+      - Bulletproof SSL and TLS
+      - Apache Security; 2008
+- server
+  - redis5设计与源码分析; 陈雷等 2019.8; ds 代码运行 持久化/主从/分布式集群
+  - Redis入门指南 ed2; 2015.5
+  - [黄建宏](huangz.me)
+    - [redis使用手册](http://redisguide.com); 2019.9
+    - redis实战; 译者 2015.11
+    - [Redis设计与实现](http://redisbook.com); 2014.6
+  - [karl](http://openmymind.net)
+    - the little redis book; the little mongodb book
+  - 千金良方: mysql性能优化金字塔法则; 2019.10; 基础/性能/工具
+  - mysql技术内幕: innoDB存储引擎, ed2; 2013.5; innoDB体系结构/实现原理/工作机制+大量最佳实践
+  - Sams teach yourself SQL in 10 minutes mysql必知必会, ed4; 2013.5; sql语法
+  - high performance mysql 高性能mysql, ed3; 2012.6; mysql5.6
+  - Database System Concepts 数据库系统概念, ed6; 2021.3
+  - sql反模式; 2011.9
+  - 深入理解Kafka：核心设计与实践原理; 2019.1 kafka2.0.0
+  - 深入理解 nginx 模块开发与架构解析, ed2; 陶辉 2016
+  - http/2基础教程; 2018.1
+  - http 权威指南; 2012.9
+- data
+  - [Practical Statistics for Data Scientists: 50 Essential Concepts 面向数据科学家的实用统计学](psds.md); 2018.10
+  - [ddia](ddia.md), designing data-intensive application 设计数据密集型应用; 2017.10
+  - 用数据讲故事; 2017.8
+- foundation 基石
+  - algo
+    - 漫画算法: 小灰的算法之旅; 2019.5
+    - Algorithms to Live By 算法之美: 知道工作与生活的算法; 2018.5; 计算机思维指导生活
+    - grokking algorithms 算法图解; 2017.3; 入门佳作
+    - 数据结构与算法(java语言描述); 邓俊辉 2013
+    - Introduction to Algorithms 算法导论, ed3; 2012.12; 2层, 一层培养算法思维+使用现有的结论, 一层深入算法的数学证明(这层可选择)
+    - [算法ed4](algo_ed4.md); 2012.10
+  - compiler 编译器: 龙书-编译原理 虎书-现代编译原理 可变目标C编译器
+  - os 操作系统
+    - Systems Performance: Enterprise and the Cloud 性能之巅 ed2; 2020.12
+    - [现代操作系统: 原理与实现](https://ipads.se.sjtu.edu.cn/mospi); 2020.10
+    - Computer Architecture: A QuantitativeApproach 计算机体系结构: 量化研究方法 ed6; 2019.7
+    - modern operating system ed4 现代操作系统; 2017.7
+    - [csapp 深入理解计算机操作系统](http://csapp.cs.cmu.edu), ed3; 2016.11
+    - 系统虚拟化: 原理与实现; 2009.1
+    - APUE, Advanced Programming in the UNIX Environment unix环境高级编程 ed3; 2014.6 PCNTL fork/waitpid/signal
+    - AUP, the art of unix programming unix编程艺术; 2012.8
+    - UNP unixNetworkProgramming unix网络编程: socketAPI/进程间通信; 2006.1
+    - 鸟哥的Linux私房菜 基础学习篇 ed4; 2018.10
+    - 后台开发：核心技术与应用实践 2016.8
+    - TCP/IP网络编程 2014.7
+    - 奔跑吧Linux内核; 张天飞 2021.3
+    - Linux/UNIX系统编程手册 2014.1
+    - `高性能linux服务器编程`; 2013.5
+    - 理解UNIX进程; 2013.5
+    - Linux多线程服务端编程: 使用muduo C++网络库; 2013.1
+    - linux操作系统原理与应用; 2012.1
+    - Understanding the Linux Kernel 深入Linux内核架构; 2010.5 linux2.6.24
+    - Linux程序设计 ed4; 2010.5
+    - Windows内核原理与实现; 潘爱民 2010.4
+    - 理解Linux内核 ed3; 2007.10 linux2.6
+    - 深入理解Linux内核 ed3; 2007.10
+    - linux内核源代码情景分析; 2001.9 linux2.4.0
+  - net network 网络
+    - 图解网络-小林coding; 2021
+    - 移动互联网导论; 2019.4
+    - 网络是怎么连接的; 2017.1
+    - 图解HTTP; 2014.5
+    - HTTP: The Definitive Guide HTTP权威指南 2012.8
+    - TCP/IP详解 卷1：协议; 2000.4
+- math
+  - [数学女孩1-4](math_girl.md); 结城浩 2019.5
+  - [The Calculus Lifesaver:All the Tools You Need to Excel at Calculus 普林斯顿微积分读本](calculus_lifesaver.md); 2016.10
+  - 微积分的历程: 从牛顿到勒贝格; 2010.7
+- manage 管理
+  - [pragmatic programmer](the_pragmatic_programmer.md) 程序员修炼之道: 从小工到专家/通向务实的最高境界; 2020.4; 新手圣经
+  - 程序员7堂职场课; 2020.2
+  - [奔跑吧, 程序员: 从零开会打造产品/技术/团队](coder_run.md); 2018.7
+  - 修改软件的艺术: 构建易维护代码的9条最佳实践; 2017.10
+  - 程序员的自我修养; 2017.5
+  - [程序员跳槽全攻略](coder_job_hopping.md); 2016
+  - The Mythical Man-Month 人月神话 40周年纪念版; 2015.4
+  - The Productive Programmer 卓有成效的程序员; 2009.3
+- 科技人文历史
+  - 人工智能简史 ed2; 尼克 2021.1
+  - 计算思维史话; 2020.7
+  - 无线通信简史: 从电磁波到5G; 2020.4
+  - Fire in the Valley:The Birth and Death of the Personal Computer 硅谷之火, ed3; 2019.10
+  - [极简算法史：从数学到机器的故事](mini_history_of_algo.md); 2018.12
+  - [算法小时代: 从数学到生活的改变](algo_small_age.md); 2017.10
+  - 智能时代: 大数据与智能革命重新定义未来; 吴军 2016.8; 机械思维(因果)与大数据思维(概率统计)
+  - code 编码: 隐匿在计算机软硬件背后的语言; 2012.10
+  - 黑客与画家; Paul.Graham(保罗.格雷厄姆) 阮一峰(译) 2011.4
+  - just for fun: the story of an accidental revolutionary 2002.6; 只是为了好玩: linux之父linus自传 2014.7
+- other
+  - [游戏剧本怎么写](game_script.md); 2018.8
+  - [Linux命令行与shell脚本编程大全 ed3](https://www.ituring.com.cn/book/1698); 2016.8
+  - 垃圾回收的算法与实现; 2016.7
+  - the image processing handbook 数字图像处理, ed6; Russ J.C. 2014.8
+  - [geoIP](https://www.maxmind.com/en/geoip2-databases)
+  - [GNU configure](http://www.airs.com/ian/configure/)
+
+## mark
+
+- 自由软件杂志 hacker: someone who loves to program and enjoys being clever about it
+- 在所有的弱点中, 最大的弱点就是害怕暴露弱点
+- 如果某个想法是你唯一的想法, 再没有什么比这更危险的事情了
+- 在自责中有一种满足感. 当我们责备自己时, 会觉得再没人有权责备我们. -- 奥斯卡.王尔德 <多里安.格雷的画像>
+- 完美, 不是在没有什么需要增加, 而是在没有什么需要去掉时达到的
+- unix哲学: 提供锋利的小工具, 其中每一样都意在把一件事情做好
+- 文明通过增加我们不假思索就能完成的重要操作的数目而取得进步 -- 阿尔弗雷德.诺思.怀特思
+- make it so -- 星际迷航
+- 所谓专家, 就是在一个很小的领域里把所有错误都犯过了的人 -- 尼尔斯·玻尔
+- 信息论认为消除一件事情的不确定性就是获取足够多的信息.
+  - 非洲鼓语 -> 文字的发明 -> 第一本英语字典 -> 差分机+程序 -> 信号塔+摩斯电码 -> 信息论
+  - 信息论 -> 信息转向 -> 麦克斯韦妖+生命的编码+模因+随机性+量子信息论
+- All problems in computer science can be solved by another level of indirection. --David Wheeler
+- there are no silver bullet 没有银弹 -- Fred.Brooks
+- design for failure
+- be conservative in what you send, be liberal in what you accept 伯斯塔尔法则
+- kiss: keep it simple, stupid
+- smart: specific measurable attainable relevant timeBound

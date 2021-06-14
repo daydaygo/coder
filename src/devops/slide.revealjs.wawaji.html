@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/reveal.js/3.5.0/css/reveal.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.5.0/css/theme/white.min.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                <textarea data-template>
+                    ## 天天抓娃娃
+                    ### 系统 / 业务 解析
+
+                    分享人 [daydaygo](http://wiki.dayday.tech)
+
+                    power by [reveal.js](https://github.com/hakimel/reveal.js)
+                </textarea>
+                <textarea data-template>
+                    ## 项目一览
+
+                    - 调度 server: wawaji-api
+                    - room server
+                    - game server
+                    - wawaji server
+                    - app: ios / Android
+                    - tv app
+                    - mqtt server / go broadcast / 板子
+                </textarea>
+                <textarea data-template>
+                    ## wawaji-api
+
+                    - 提供 api 供 app 使用
+                    - 提供调度接口, 返回 tcp server 连接信息
+                </textarea>
+                <textarea data-template>
+                    ## room-server
+
+                    - client: app
+                    - 房间列表: 状态更新
+                    - 房间内: 用户进入退出房间 / 房间内状态(包括游戏状态)
+                </textarea>
+                <textarea data-template>
+                    ## game-server
+
+                    - client: app
+                    - 用户上机扣费
+                    - 用户游戏, pub 用户操作信息到 mq 给 wawaji-server 使用
+                    - sub 来自 wawaji-server 的游戏结果通知
+                </textarea>
+                <textarea data-template>
+                    ## wawaji-server
+
+                    - client: TV app
+                    - sub 来自 game-server 的游戏操作信息, 传递给 TV app
+                    - 获取 TV app 传递来的游戏结果, pub 到 mq 给 game-server 使用
+                </textarea>
+            </section>
+            <section>Single Horizontal Slide</section>
+            <section>
+                <section>Vertical Slide 1</section>
+                <section>Vertical Slide 2</section>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/classlist/2014.01.31/classList.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/js/reveal.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/markdown/marked.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/zoom-js/zoom.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdn.bootcss.com/reveal.js/3.5.0/plugin/math/math.min.js"></script>
+    <script>
+        Reveal.initialize({
+            // width: 480,
+            // height: 480,
+            // keyboard: {
+            //     13: 'next', // go to the next slide when the ENTER key is pressed
+            //     27: function() {}, // do something custom when ESC is pressed
+            //     32: null // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+            // }
+        });
+    </script>
+</body>
+
+</html>
