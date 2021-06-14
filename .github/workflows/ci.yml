@@ -1,0 +1,31 @@
+# https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#example-using-yarn
+name: Build and Deploy
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.CODING_TOKEN }}
+        TARGET_LINK: https://cOZajDiTyR:${{ secrets.CODING_TOKEN }}@e.coding.net/daydaychen/mac/coder.git
+        TARGET_BRANCH: master
+        BUILD_SCRIPT: yarn && yarn docs:build
+        BUILD_DIR: docs/.vuepress/dist/
+
+    - name: Send dingding notify
+      if: ${{ failure() }}
+      uses: GavinHome/action-dingding@v1.0
+      with:
+        token: beb4f6e08f5572e0e8bef16a7cb4630b51d20ca82224f3a3e51248eacb669d6d
+        body: |
+          {
+            "msgtype": "markdown",
+            "markdown": {
+                "title":"github action: coder",
+                "text": "github action - coder: fail"
+              },
+          }

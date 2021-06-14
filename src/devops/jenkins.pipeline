@@ -1,0 +1,34 @@
+node {
+    script {
+        mysql_addr = '127.0.0.1' // service cluster ip
+        redis_addr = '127.0.0.1' // service cluster ip
+        user_addr = '127.0.0.1:30036' // nodeIp : port
+    }
+    stage('clone code from github') {
+        echo "first stage: clone code"
+        git url: "https://github.com/longjoy/micro-go-course.git"
+        script {
+            commit_id = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+        }
+    }
+    stage('build image') {
+        echo "second stage: build docker image"
+        sh "docker build -t aoho/user:${commit_id} section11/user/"
+    }
+    stage('push image') {
+        echo "third stage: push docker image to registry"
+        sh "docker login -u aoho -p xxxxxx"
+        sh "docker push aoho/user:${commit_id}"
+    }
+    stage('deploy to Kubernetes') {
+        echo "forth stage: deploy to Kubernetes"
+        sh "sed -i 's/<COMMIT_ID_TAG>/${commit_id}/' user-service.yaml"
+        sh "sed -i 's/<MYSQL_ADDR_TAG>/${mysql_addr}/' user-service.yaml"
+        sh "sed -i 's/<REDIS_ADDR_TAG>/${redis_addr}/' user-service.yaml"
+        sh "kubectl apply -f user.yaml"
+    }
+    stage('http test') {
+        echo "fifth stage: http test"
+        sh "cd section11/user/transport && go test  -args ${user_addr}"
+    }
+}

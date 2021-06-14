@@ -1,0 +1,12 @@
+---
+resources:
+- name: resource-web
+  type: git
+  source:
+    uri: https://gitee.com/daydaygo/web.git
+    branch: master
+
+jobs:
+  - get: resource-web
+  - task: task-hello
+    file: resource-web/ci/task_hello.yml

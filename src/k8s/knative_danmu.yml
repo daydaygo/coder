@@ -1,0 +1,111 @@
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: danmu-portal
+  namespace: default
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "1"
+        autoscaling.knative.dev/minScale: "1"
+        k8s.aliyun.com/eci-use-specs: "ecs.t6-c2m1.large,ecs.s6-c1m1.small"
+    spec:
+      containerConcurrency: 0
+      serviceAccountName: danmu-install-sa
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/knative-sample/danmu:v1.1
+        name: user-container
+        env:
+        - name: KAFKA_SERVER
+          value: "__KAFKA_SOURCE_LIST__"
+        - name: KAFKA_TOPIC
+          value: "demo"
+        ports:
+        - containerPort: 8080
+          name: http1
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: danmu-message
+  namespace: default
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "10"
+        autoscaling.knative.dev/minScale: "1"
+    spec:
+      containerConcurrency: 2
+      containers:
+      - args:
+        - /manager
+        - --url=http://danmu-portal.default.svc.cluster.local/api/send
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        image: registry.cn-hangzhou.aliyuncs.com/knative-sample/danmu-manager:danmu_48680a04-20210319171906
+        name: user-container
+        ports:
+        - containerPort: 8000
+          name: http1
+---
+apiVersion: sources.knative.dev/v1alpha1
+kind: KafkaSource
+metadata:
+  annotations:
+    k8s.aliyun.com/req-timeout: "60"
+    k8s.aliyun.com/retry-count: "1"
+    k8s.aliyun.com/retry-interval: "2"
+  name: kafka-danmu
+  namespace: default
+spec:
+  bootstrapServers: "__KAFKA_SOURCE_LIST__"
+  consumerGroup: demo-consumer
+  sink:
+    ref:
+      apiVersion: serving.knative.dev/v1
+      kind: Service
+      name: danmu-message
+      namespace: default
+  topics: demo
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: danmu-install
+  labels:
+    app: danmu
+rules:
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["get", "list"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: danmu-install-role-binding
+  labels:
+    app: danmu
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: danmu-install
+subjects:
+  - kind: ServiceAccount
+    name: danmu-install-sa
+    namespace: default
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: danmu-install-sa
+  namespace: default
+  labels:
+    app: danmu

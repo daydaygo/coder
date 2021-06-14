@@ -1,0 +1,116 @@
+server {
+    listen 80;
+    server_name localhost;
+    root /data;
+    autoindex on;
+    # fpm
+    location ~ \.php$ {
+        fastcgi_pass fpm:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    # fpm status
+    location /fpm_status {
+        access_log off;
+        # allow 127.0.0.1;
+        # deny all;
+        fastcgi_pass fpm:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    # nginx status
+    location /ngx_status {
+        stub_status on;
+    }
+}
+server {
+    listen 80 default_server;
+    server_name daydaygo.top www.daydaygo.top c.daydaygo.top;
+    root /data/web;
+    index mygoddess.html;
+}
+
+# gogs
+# server {
+#     listen 80;
+#     server_name gogs.daydaygo.me;
+#     location / {
+#         proxy_pass http://gogs:3000;
+#     }
+# }
+
+# yii
+# server {
+#     listen 80;
+#     server_name yb.daydaygo.me;
+#     index index.php;
+#     # autoindex on;
+#     # basic
+#     root /var/www/opensource/yii.basic/web;
+#     location / {
+#         try_files $uri $uri/ /index.php?$args;
+#     }
+#     # advance
+#     # root /var/www/xiaoyujinfu/xybt.com;
+#     # location / {
+#     #     if (!-e $request_filename) {
+#     #         rewrite ^/(.*)/web/(.*) /$1/web/index.php last;
+#     #     }
+#     # }
+#     location ~ \.php$ {
+#         fastcgi_pass fpm:9000;
+#         fastcgi_index index.php;
+#         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+#         include fastcgi_params;
+#     }
+# }
+
+# pt-oms
+# server {
+#     listen 80;
+#     server_name oms.pt.me;
+#     root /var/www/innotech/pt-oms/www;
+#     index index.php;
+#     if (!-e $request_filename) {
+#         rewrite ^/(.*) /index.php?$1 last;
+#     }
+#     location ~ \.php {
+#         fastcgi_pass 127.0.0.1:9000;
+#         fastcgi_index index.php;
+#         include fastcgi.conf;
+#         client_max_body_size 2m;
+#     }
+# }
+# # pt-mms
+# server {
+#     listen 80;
+#     server_name mms.pt.me;
+#     root /var/www/innotech/pt-mms/www;
+#     index index.php;
+#     if (!-e $request_filename) {
+#         rewrite ^/(.*) /index.php?$1 last;
+#     }
+#     location ~ \.php {
+#         fastcgi_pass 127.0.0.1:9000;
+#         fastcgi_index index.php;
+#         include fastcgi.conf;
+#         client_max_body_size 2m;
+#     }
+# }
+# pt-php-service
+server {
+    listen 80;
+    server_name s.pt.me;
+    root /var/www/innotech/pt-php-service/www;
+    index index.php;
+    if (!-e $request_filename) {
+        rewrite ^/(.*) /index.php?$1 last;
+    }
+    location ~ \.php {
+        fastcgi_pass fpm:9000;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+        client_max_body_size 2m;
+    }
+}

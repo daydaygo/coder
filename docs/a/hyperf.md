@@ -1,0 +1,74 @@
+# hperf
+
+- hyperf: 组件主库, 开发在此, 然后分发到其他库
+  - base基础 core核心
+    - di: dependInjection依赖注入=IoC.InverseOfControl控制反转=container容器
+      - contract合约=interface接口
+    - config: 配置管理
+    - event: 事件机制
+    - logger日志: 基于 monolog
+    - utils: 协程等
+    - testing
+  - server服务, config/autoload/server.php, 基于 swoole/swow server
+    - framework: app/exception/logger event+callback
+    - exception-handler: server异常处理器
+    - dispatcher: httpServer
+    - http-message
+    - server -> http-server -> websocket-server->socketio-server / mqtt-server
+      - guzzle
+      - websocket-client
+      - swagger
+      - graphql
+      - engine(swoole) engine-swow
+    - session super-globals(兼容`$_GET`)
+    - view -> view-engine
+    - translation
+    - validation
+  - microservice微服务
+    - 配置中心: config-aliyun-acm config-apollo config-etcd config-zookeeper
+    - 服务治理: service-governance(默认使用 consul) circuit-breaker(服务雪崩=服务降级=熔断=client) load-balancer负载均衡 rate-limit限流 retry
+      - consul etcd nacos
+    - protocol/multiplex -> socket -> multiplex-socket
+    - rpc rpc-client rpc-server json-rpc/jet rpc-multiplex
+    - grpc grpc-client grpc-server: 基于 google/protobuf + http/2 组装 grpc 请求
+    - metric: adapter influxDB/noOP/prometheus/remoteProxy/statsD
+    - tracer(opentracing zipkin)
+    - snowflake
+  - func功能集成
+    - pool: 连接池
+    - redis
+    - database: 基于 laravel Eloquent ORM 封装
+      - db-connection: 基于 hyperf/pool 实现 pdo 连接池
+      - model-cache: eagerLoad redis
+      - model-listener: modelEvent modelHookEvent
+      - resource: model->json
+      - resource-grpc: model->grpc
+    - db: 极简db组件, 基于 hyperf/pool 实现 pdo/swooleMysql 连接池
+      - db-pgsql
+    - mq: amqp kafka(基于 longlang/phpkafka, 需要 kafak>=1.0.0) nats nsq(暂时只支持node, nsqlookup还未支持)
+    - elasticsearch scout(全文搜索, 默认es作为driver)
+    - clickhouse
+    - filesystem: 集成 League\Flysystem, 实现 oss/s3/qiniu/mem/cos
+    - task: async-queue(redis) crontab(支持秒级) dag(有向无环图任务编排)
+    - cache `coMem fs redis`
+    - command
+      - devtool: gen vendor:publish
+  - tool工具
+    - constants枚举类: 例如 errCode
+    - swoole: task(taskWorker) gotask(替代task) memory(swoole atom/lock/table) process signal(信号监听, worker进程和自定义进程) swoole-tracker
+    - paginator: 分页器, 输入 array/Collection
+    - watcher
+    - component-creater github-bot coding-standard ideas
+    - nano(single php file) phar reactive-x(异步数据流处理 异步+基于事件的程序) composer-plugin(自动加载排序) rpn(reverse polish notation)
+- biz 业务
+  - hyperf-skeleton hyperf-installer
+  - biz-skeleton: web.api; github.workflow(build test release)
+  - swow-skeletion
+  - hyperf-admin
+  - okr实战项目
+- devops(lint test build deploy k8s mesh)
+  - hyperf-docker: 推荐 7.4-alpine-v3.12-swoole 7.4-alpine-v3.12-swow
+    - img `hyperf/hyperf:${PHP_VERSION}-alpine-v${ALPINE_VERSION}-base` base -> dev`phpize` swoole swow 都包含composer
+    - src `build.sh PHP_VERSION ALPINE_VERSION` -> `docker-compose.yml` -> `${PHP_VERSION}/alpine/base`
+  - php-alpine: PHP APK Repository for Alpine Linux -> alpine与PHP版本对应关系
+  - [hyperf/homebrew-hyperf](https://github.com/hyperf/homebrew-hyperf): mac本地运行hyperf, Mac brew装的autoconf版本比较高, Php7.4执行phpize的时候会有告警

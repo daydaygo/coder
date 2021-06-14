@@ -1,0 +1,183 @@
+version: '3.1'
+services:
+    go:
+        build: go
+        environment:
+            TZ: Asia/Shanghai
+        volumes:
+            - ../:/var/www
+        tty: true
+    py3:
+        build:
+            context: .
+            dockerfile: py3.Dockerfile
+        volumes:
+            - ../:/var/www
+        environment:
+            TZ: Asia/Shanghai
+        tty: true
+    r:
+        image: r-base:3.5.0
+        volumes:
+            - ../:/var/www
+        # environment:
+        #     TZ: Asia/Shanghai
+        tty: true
+    node:
+        build:
+            context: .
+            dockerfile: node.Dockerfile
+        volumes:
+            - ../:/var/www
+        ports:
+           - "4000:4000"
+    ruby:
+        build:
+            context: .
+            dockerfile: ruby.Dockerfile
+        volumes:
+            - ../:/var/www
+        tty: true
+
+    gogs:
+        image: gogs/gogs:0.11.66
+        volumes:
+            - ./data/gogs:/data
+    aria2:
+        image: xujinkai/aria2-with-webui
+        ports:
+            - "6800:6800"
+            - "6888:80"
+        volumes:
+            - /Users/daydaygo/Desktop:/data
+            - ./data/aria2:/conf
+        # environment:
+        #     SECRET: YOUR_SECRET_CODE
+    tf:
+        image: tensorflow/tensorflow:nightly-py3-jupyter
+        volumes:
+            - ./config/jupyter_notebook_config.json:/root/.jupyter/jupyter_notebook_config.json
+            - ../:/var/www
+        ports:
+           - "8888:8888" # jupyter notebook
+           - "6006:6006" # TensorBoard
+    yii:
+        build:
+            context: php
+            dockerfile: yii.Dockerfile
+        volumes:
+            - ../:/var/www
+        tty: true
+    tars:
+        build:
+            context: php
+            dockerfile: tars.Dockerfile
+        volumes:
+            - ../:/var/www
+        ports:
+            - "9504:9504"
+            - "9505:9505"
+        tty: true
+    workerman:
+        build:
+            context: php
+            dockerfile: workerman.Dockerfile
+        volumes:
+            - ../:/var/www
+        ports:
+            - "9506:9506"
+            - "9507:9507"
+        tty: true
+    swoft:
+        # container_name: swoft
+        image: swoft/swoft
+        volumes:
+            - ../:/var/www
+        links:
+            - mysql
+            - redis
+        ports:
+            - "8001:8001"
+            - "9501:9501"
+        working_dir: /var/www/swoole/swoft
+        stdin_open: true
+        command: php -a
+        tty: true
+    mongo:
+        image: mongo:4.0.0-rc4-xenial
+        ports:
+            - "27017:27017"
+    kafka: # https://github.com/wurstmeister/kafka-docker
+        image: wurstmeister/kafka:2.11-2.0.0
+    influxdb:
+        image: influxdb:1.4.3-alpine
+        ports:
+            - "8086:8086"
+        #     - "8083:8083" # admin
+        #     - "2003:2003" # graphite
+        environment:
+            INFLUXDB_DB: log
+            INFLUXDB_USER: log
+            INFLUXDB_USER_PASSWORD: logpass
+        #     INFLUXDB_GRAPHITE_ENABLED: 1
+        #     INFLUXDB_ADMIN_ENABLED: 1
+        # volumes:
+        #     - ./data/influxdb:/var/lib/influxdb
+    grafana:
+        image: grafana/grafana:5.1.0-beta1
+        ports:
+            - "3000:3000"
+        environment:
+            GF_SERVER_ROOT_URL: http://grafana.server.name
+            GF_SECURITY_ADMIN_PASSWORD: secret
+    elk: # https://elk-docker.readthedocs.io
+        image: sebp/elk:640
+        ports:
+            - "5601:5601" # kibana
+            - "9200:9200" # elasticsearch
+            - "5044:5044" # logstash
+    jenkins:
+        build:
+            context: devops
+            dockerfile: jenkins.Dockerfile
+        environment:
+            TZ: Asia/Shanghai
+        ports:
+            - "8080:8080"
+            - "50000:50000"
+        volumes:
+            - ./data/jenkins:/var/jenkins_home
+        tty: true
+    # docker run jenkins/jnlp-slave -url http://jenkins-server:port -workDir=/home/jenkins/agent <secret> <agent name>
+    jenkins-slave:
+        build:
+            context: devops
+            dockerfile: jenkins-slave.Dockerfile
+        environment:
+            TZ: Asia/Shanghai
+            JENKINS_URL: http://jenkins:8080
+            JENKINS_SECRET: secret
+            JENKINS_AGENT_NAME: aliyun-cly
+            # JENKINS_AGENT_WORKDIR: /Users/daydaygo/Desktop/www/docker/data/jenkins-slave
+        tty: true
+    java:
+        build: java
+        volumes:
+            - ../:/var/www
+        tty: true
+    teamcity:
+        image: jetbrains/teamcity-server
+        ports:
+            - "8111:8111"
+        volumes:
+            - ./data/teamcity:/data/teamcity_server/datadir
+            - ./logs/teamcity:/opt/teamcity/logs
+        environment:
+            TEAMCITY_SERVER_MEM_OPTS: "-Xmx2g -XX:ReservedCodeCacheSize=350m"
+    teamcity-agent:
+        image: jetbrains/teamcity-minimal-agent
+        environment:
+            SERVER_URL: ""
+            AGENT_NAME: ""
+        volumes:
+            - ./devops/teamcity-agent/conf:/data/teamcity_agent/conf

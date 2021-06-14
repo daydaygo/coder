@@ -1,0 +1,144 @@
+##################################################################################################
+# Reviews service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: review
+  labels:
+    app: review
+    service: review
+spec:
+  ports:
+    - port: 80
+      name: http
+  selector:
+    app: review
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-review
+  labels:
+    account: review
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-v1
+  labels:
+    app: review
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: review
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: review
+        version: v1
+    spec:
+      serviceAccountName: bookinfo-review
+      containers:
+        - name: review
+          image: registry.cn-shanghai.aliyuncs.com/daydaygo/istio_bookinfo_review:0.1.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LOG_DIR
+              value: "/tmp/logs"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: wlp-output
+              mountPath: /opt/ibm/wlp/output
+      volumes:
+        - name: wlp-output
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-v2
+  labels:
+    app: review
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: review
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: review
+        version: v2
+    spec:
+      serviceAccountName: bookinfo-review
+      containers:
+        - name: review
+          image: registry.cn-shanghai.aliyuncs.com/daydaygo/istio_bookinfo_review:0.2.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LOG_DIR
+              value: "/tmp/logs"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: wlp-output
+              mountPath: /opt/ibm/wlp/output
+      volumes:
+        - name: wlp-output
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-v3
+  labels:
+    app: review
+    version: v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: review
+      version: v3
+  template:
+    metadata:
+      labels:
+        app: review
+        version: v3
+    spec:
+      serviceAccountName: bookinfo-review
+      containers:
+        - name: review
+          image: registry.cn-shanghai.aliyuncs.com/daydaygo/istio_bookinfo_review:0.3.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LOG_DIR
+              value: "/tmp/logs"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: wlp-output
+              mountPath: /opt/ibm/wlp/output
+      volumes:
+        - name: wlp-output
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+---

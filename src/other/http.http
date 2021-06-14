@@ -1,0 +1,7 @@
+@host=https://httpbin.org/
+
+### learn
+{{host}}get
+
+### wiki
+https://en.wikipedia.org/w/api.php?action=opensearch&format=json&formatversion=2&search=turing&namespace=0&limit=100

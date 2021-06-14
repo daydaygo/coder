@@ -1,0 +1,9 @@
+# https://www.aerospike.com/docs/deploy_guides/docker/index.html
+# docker run -ti --name aerospike-asadm --rm aerospike/aerospike-tools asadm --host 10.0.0.173 --no-config-file
+version: '3.1'
+services:
+    # 也包含 aql 工具
+    as:
+        image: aerospike/aerospike-server
+        volumes: 
+            - ./aerospike.conf:/etc/aerospike/aerospike.conf
