@@ -2,13 +2,13 @@
 
 - [swoole| swoole wiki 笔记](https://www.jianshu.com/p/12d645ac02b2)
 
-# 初心
+## 初心
 
 PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时候抛开历史的包袱, 轻装上阵了. 希望这样过一份 swoole 知识的梳理, 能对 PHPer 有所帮助.
 
 > 梳理 swoole wiki 的方向建议: 尽量用协程, 实在不行就同步, 所有的知识都围绕这展开.
 
-# swoole 功能一览
+## swoole 功能一览
 
 重点
 
@@ -32,13 +32,13 @@ PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时�
   - lock: 协程中请使用 chan / 协程调度器
 - 异步 client: client mysql redis http
 
-# swoole 协程
+## swoole 协程
 
 - [swoole| swoole 协程初体验](https://www.jianshu.com/p/745b0b3ffae7): 辅助理解协程的基本概念
 - [swoole| swoole 协程知识点小结](https://www.jianshu.com/p/b620836c461a): 辅助理解 swoole 中的协程知识点
 - [swoole| swoole 协程用法笔记](https://www.jianshu.com/p/28e882352da5): swoole 协程 API 梳理/速查
 
-# swoole 协程 server
+## swoole 协程 server
 
 ![运行流程图](https://wiki.swoole.com/static/uploads/swoole.jpg)
 ![进程/线程结构图](https://wiki.swoole.com/static/image/process.jpg)
@@ -64,11 +64,11 @@ PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时�
 - [多端口监听](https://wiki.swoole.com/wiki/page/525.html): 一个swoole, 多个server
 - [server中对象的4层生命周期](https://wiki.swoole.com/wiki/page/354.html): 注意和传统 fpm 的区别
 
-# swoole 协程 client
+## swoole 协程 client
 
 - [是否可以共用同一个redis/mysql连接](https://wiki.swoole.com/wiki/page/325.html): 连接池是标配
 
-# swoole 进程 & 进程池
+## swoole 进程 & 进程池
 
 - [Swoole| Swoole 中 Process](https://www.jianshu.com/p/4b6326cdaaa7): 主要内容是进程间通信部分
 - `->addProcess()`: [广播消息](https://wiki.swoole.com/wiki/page/390.html)
@@ -76,7 +76,7 @@ PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时�
 - process-pool: [需要长期运行的脚本, 比如 mq 消费者](https://wiki.swoole.com/wiki/page/901.html)
 - [process+协程](https://wiki.swoole.com/wiki/page/p-process_coro.html)
 
-# swoole more
+## swoole more
 
 - [swoole相关函数](https://wiki.swoole.com/wiki/page/548.html)
 - 附录: linux信号 linux错误码 swoole错误码 tcp连接状态 tcpdump/strace/gdb/lsof/perf
@@ -92,27 +92,27 @@ PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时�
 - wiki: https://www.yuque.com/swoole-wiki/dam5n7
 - 申请试用: https://www.swoole-cloud.com/dashboard/catdemo/
 
-# 编程指引
+## 编程指引
 
 - swoole 快速起步 [daydaygo/php-note](https://github.com/daydaygo/php-note/tree/master/swoole): swoole API 简单 demo, 方便速查
 - [学习 swoole 需要掌握的基础知识](https://wiki.swoole.com/wiki/page/487.html): linux高性能服务器编程; UNP; tcp/ip详解
 - [swoole 编程注意事项](https://wiki.swoole.com/wiki/page/p-instruction.html): 语言相关/协程编程/并发编程/内存管理/进程隔离
 - [版本更新记录](https://wiki.swoole.com/wiki/page/p-project/change_log.html): 仔细看看, 就能体会到开发组的努力
-- 版本路线路线图: [trello](https://trello.com/b/SEdDCrCu/swoole-kernel-developer) [rfc-chinese]() [rfc](https://github.com/swoole/rfc)
+- 版本路线路线图: [trello](https://trello.com/b/SEdDCrCu/swoole-kernel-developer) [rfc](https://github.com/swoole/rfc)
 - 编程建议(个人看法)
   - 基础知识的补充和扎实, 远比对 API 的熟悉要强, 建议花时间理解: 网络编程基础; 同步/异步/协程基本概念; swoole进程/线程模型; swoole各组件+组件功能+组件生命周期
   - 编程方式: **尽量使用协程, 实在不行就同步**; 好处很明显, 关注swoole功能的子集, 理解和熟悉API 都容易不少
   - 建议不使用别名, 直接使用原写法, 如 `Server->tick()` 是 `\Swoole\Timer::tick()` 的别名
   - 建议除了 `go() chan()` 等十分常用的函数, 不要使用简写, 直接使用原写法, 如 `Co::sleep()` 是 `\Swoole\Coroutine::sleep()` 的简写
 
-# php
+## php
 
 - [callback](https://wiki.swoole.com/wiki/page/458.html)
 - 信号处理 ext-pcntl
 - 原生socket `ext-socket` `stream_socket_client()`
 - `memory_get_usage() + memory_limit` 来做内存检测 -> 防止 worker 内存溢出, 配合 `exit()` 退出worker进程, manager 进程会自动拉起新的 worker 进程
 
-# NP(network programming)基础
+## NP(network programming)基础
 
 ![tcp 三次握手四次挥手](https://www.swoole.com/static/image/tcp_syn.png)
 
@@ -122,7 +122,7 @@ PHP想做微服务, 离不开 swoole. 而 swoole 进入协程时代后, 是时�
 - 并发编程: 并发执行->为每个客户端/请求, 创造不同资源和上下文(context)
 - [内核参数调整](https://wiki.swoole.com/wiki/page/p-server/sysctl.html): `sysctl -a` 查看所有内核参数; `/proc/sys/` 文件夹
 
-# devops
+## devops
 
 - 实践推荐
   - 项目git -> 绑定阿里云容器镜像服务 -> 关联容器服务(小型项目可以先用 swarm 验证, 大型复杂项目转k8s)

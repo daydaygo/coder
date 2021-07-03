@@ -294,7 +294,8 @@ ssh-keygen -e [-f input_keyfile] [-m key_format] # change format
     - rwlock 读多写少
   - optimistic乐观锁 假设冲突概率低-回滚代价很大 MVVC版本号/CAS算法 write_condition机制 `java.util.concurrent.atomic` ABA问题
   - lockFree: CAS atomic
-  - deadlock=mutex互斥+hold持有资源+Inalienable不可剥夺+ring环 -> 顺序
+  - deadlock死锁: 顺序化 baike-数据库死锁
+    - [coffmanCodition](http://www.ccs.neu.edu/home/pjd/cs7600-s10/Tuesday_January_26_01/p67-coffman.pdf): MutualExclusion互斥 WaitForCondition持有资源 NoPreemption不可剥夺 CircularWait循环等待
   - 公平=FIFO=队列 vs 抢占=优先
 
 ---

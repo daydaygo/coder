@@ -44,7 +44,7 @@
 - mverything: 文件查找
 - tophub 今日热榜
 
-## chrome / edge
+## edge
 
 - extension
   - Tampermonkey
@@ -55,13 +55,8 @@
   - [vimium C](https://microsoftedge.microsoft.com/addons/detail/vimium-c-all-by-keyboar/aibcglbfblnogfjhbcmmpobjhnomhcdo)
 - console panel `cmd-shift-p`
   - 全屏截图: `shot`
-- flags `chrome://flags`
-  - command-line options
-  - 打开多线程下载: 搜索 download
+- flags `edge://flags`: download dark
 - collection: learn algo
-- 其他
-  - password 需要配合使用 iCloud
-  - 双击地址栏显示完整地址
 - 夸克: 下滑搜索 快搜 扫一扫 学习
 - 360: 支持flash
 

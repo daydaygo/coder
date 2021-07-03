@@ -5,7 +5,7 @@
 内存管理、虚拟内存
 死锁检测和避免
 
-- 麻省理工 MIT 6.828（无字幕） https://www.bilibili.com/video/BV1px411E7ST 
+- 麻省理工 MIT 6.828（无字幕） https://www.bilibili.com/video/BV1px411E7ST
 - 操作系统（哈工大李治军老师）32讲（全）超清 https://www.bilibili.com/video/BV1d4411v7u7
 - 操作系统: 小林coding-图解系统
 - 深入理解计算机系统 CSAPP, Computer Systems：A Programmer‘s Perspective

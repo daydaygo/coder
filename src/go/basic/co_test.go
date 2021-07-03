@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"math/rand"
 	"net/http"
 	"os"
 	"runtime"
@@ -11,6 +12,8 @@ import (
 	"testing"
 	"time"
 )
+
+var once sync.Once
 
 func Test_go(t *testing.T) {
 	// ch chan
@@ -25,7 +28,7 @@ func Test_go(t *testing.T) {
 	var tokens = make(chan struct{}, 20) // token sem 类似 sync.Mutex
 	tokens <- struct{}{}
 
-	// select: timeout abort
+	// select: timeout abort for-select
 	ch1, ch2 := make(<-chan struct{}), make(chan<- struct{})
 	select {
 	case val := <-ch1: // 从 ch1 读取数据
@@ -41,6 +44,7 @@ func Test_go(t *testing.T) {
 	// broadcast: https://github.com/adonovan/gopl.io/tree/master/ch8/chat/chat.go
 	// monitor go: https://github.com/adonovan/gopl.io/tree/master/ch9/bank1/bank.go
 
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	fmt.Println(runtime.GOOS, runtime.GOARCH, runtime.NumGoroutine())
 }
 
@@ -204,4 +208,70 @@ func fetch(url string, ch chan<- string) {
 		return
 	}
 	ch <- fmt.Sprintf("%s %d %.2f", url, nbytes, time.Since(start).Seconds())
+}
+
+func Test_cond(t *testing.T) {
+	c := sync.NewCond(&sync.Mutex{})
+	c.L.Lock()
+	for conditionFalse() {
+		c.Wait()
+	}
+	c.L.Unlock()
+}
+
+func conditionFalse() bool {
+	return true
+}
+
+func Test_Pool(t *testing.T) {
+	p := &sync.Pool{
+		New: func() interface{} { return struct{}{} },
+	}
+	instance := p.Get()
+	defer p.Put(instance)
+}
+
+func Test_generator(t *testing.T) {
+	take := func(
+		done <-chan interface{},
+		v <-chan interface{},
+		num int,
+	) <-chan interface{} {
+		s := make(chan interface{})
+		go func() {
+			defer close(s)
+			for i := 0; i < num; i++ {
+				select {
+				case <-done:
+					return
+				case s <- <-v:
+				}
+			}
+		}()
+		return s
+	}
+
+	fn := func(
+		done <-chan interface{},
+		f func() interface{},
+	) <-chan interface{} {
+		v := make(chan interface{})
+		go func() {
+			defer close(v)
+			for {
+				select {
+				case <-done:
+					return
+				case v <- f():
+				}
+			}
+		}()
+		return v
+	}
+	done := make(chan interface{})
+	defer close(done)
+	randFn := func() interface{} { return rand.Int() }
+	for num := range take(done, fn(done, randFn), 10) {
+		fmt.Println(num)
+	}
 }

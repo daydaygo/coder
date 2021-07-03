@@ -97,7 +97,7 @@ git branch -m <old> <new> # 分支重命名
 git branch | xargs git branch -D # 快速删除本地分支
 git remote prune origin # error: there are still refs under 'refs/remotes/origin/xxxx'
 git fetch -p origin # 同步删除本地分支
-git checkout --orphan test && git clean -df # 全新分支
+git checkout --orphan dayday && git clean -df # 全新分支
 git log --pretty=short --graph
 git log --grep='xxx' # 查询 commit msg
 git clean -f # 清除本地修改

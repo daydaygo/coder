@@ -17,7 +17,6 @@
 - [分组取前N条](http://www.cnblogs.com/netserver/p/4518995.html)
 - [mysql 行列转换](http://www.cnblogs.com/emanlee/p/3550149.html)
 - [mysql 允许外网访问](http://www.cnblogs.com/live41/archive/2013/04/02/2995178.html)：其实就是修改 `mysql.user` 表的 host 字段
-- [百度百科: 数据库死锁](http://baike.baidu.com/link?url=SBUAHTyBkX-OBvlIFU6MCTjShbAWb8r1h96z0CJMAk9M5AsQEB-pe6XIk6bty4ZqJuHDZiRBd_qK3KH9D6N0oa)：基础讲解, 理论知识
 - [csdn: 数据库死锁的解决办法](http://www.cnblogs.com/jacklondon/archive/2012/03/21/2409666.html)：感觉作者经验很丰富, 其中的表的设计相关的尤其赞成
 - [mysql性能管理&架构设计](https://segmentfault.com/a/1190000013672421)
 - [数据库并发控制](https://mp.weixin.qq.com/s?__biz=MzI0NzAxMTgxNg==&mid=2456160597&idx=1&sn=76f27b632a17830dd1c27dea260f5efe)
