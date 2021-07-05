@@ -52,6 +52,7 @@
 - eco
   - [阿里巴巴java](https://developer.aliyun.com/learning/roadmap/java)
   - [阿里巴巴微服务](https://developer.aliyun.com/learning/roadmap/microservice)
+  - javaFX(客户端app)
 
 ```sh
 # java: 安装 环境变量

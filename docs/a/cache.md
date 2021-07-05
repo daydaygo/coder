@@ -11,6 +11,7 @@
 - LFU LRU ARC FIFO MRU
 - [缓存更新的套路 | 酷 壳 - CoolShell](https://coolshell.cn/articles/17416.html)
 - Ehcache: java缓存框架
+- redis内存使用率报警: cloudDBA-缓存分析-top100key前缀
 
 ## redis REmoteDIctionaryServer
 

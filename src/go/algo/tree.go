@@ -189,7 +189,7 @@ func RightBound(nums []int, target int) int {
 	return right
 }
 
-// 滑动窗口
+// SlidingWindow 滑动窗口
 func SlidingWindow(s, t string) {
 	var need, window map[byte]int
 	for _, i := range t {

@@ -4,7 +4,7 @@
 
 - 硬件: [mac mini m1](../blog/mac_m1.md) [黑苹果](../blog/imac.md) [MacRumors Buyer's Guide](https://buyersguide.macrumors.com)
 - 快开: [utools](tools.md#utools) Alfred spotlight
-- system preference 二级菜单可以直接在 **快开*- 中打开
+- system preference 二级菜单可以直接在 **快开** 中打开
   - trackpad
     - point&click > tap to click, 轻点取代按下; look up & data detector, tap with 3 finger
   - keyboard
@@ -65,10 +65,9 @@
     - airy: youtube 视频下载
     - downie: youtube/优酷/土豆 视频下载
     - [网易见外-视频字幕](https://jianwai.youdao.com/index/0)
-  - 解压: keka eZip
-  - microsoft: office teams
+  - 解压: keka 360(解压一直失败时考虑换个工具)
   - wps office
-  - 腾讯: wechat weCom(企业微信) music lemon(垃圾清理) meeting start(云游戏)
+  - wechat weCom(企业微信) music lemon(垃圾清理) meeting start(云游戏)
   - tinyCal: statusbar 日历小工具
   - 磁盘工具: daisyDisk(磁盘文件分析 -> 找出磁盘占用) diskDrill 磁盘备份; NTFSTool
   - 小历 tinycal

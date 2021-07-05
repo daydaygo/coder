@@ -62,7 +62,7 @@
     - pt-duplicate-key-checker: 指定DB, 查看重复索引
   - query->queryBuilder->model/DAO/ORM json支持(不推荐)
   - 大查询: `net_buffer_length`边读边发 `innodb_buffer_pool_size`
-  - join: STRAIGHT_JOIN 指定驱动表.让小表做驱动表
+  - join: STRAIGHT_JOIN 指定驱动表.让小表做驱动表 https://images2017.cnblogs.com/blog/1035967/201709/1035967-20170907174926054-907920122.jpg
     - algo: NLJ.nestedLoopJoin BNL.blocknestedLoop
     - 优化: MRR.multiRangeRead顺序读 BKA.batchKeyAccess优化bnl join_buffer_size 业务实现hashJoin 临时表
   - 临时表 内部临时表=union+groupBy

@@ -5,6 +5,7 @@
 
 ## mongo
 
+- https://docs.mongodb.com/manual/core/document
 - chunk块.最小64M -> ReplicationSet复制集/sharding分片->cluster 数据均衡 master=primary slave=secondary journaling日志
 - db
 - collection集合: metadata

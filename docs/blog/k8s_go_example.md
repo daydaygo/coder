@@ -247,12 +247,10 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1 
+      maxSurge: 1
       maxUnavailable: 1
 ```
 
 ## 写在最后
 
 我是 dayday, 读书写作敲代码, 永远在路上
-
-感谢 [网管叨bi叨 - #Kubernetes学习笔记](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUzNTY5MzU2MA==&action=getalbum&album_id=1394839706508148737&scene=173#wechat_redirect "网管叨bi叨 - #Kubernetes学习笔记")

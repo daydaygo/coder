@@ -44,7 +44,7 @@
   - [cncf cloudnative](cncf_cloudnative.md)
     - [docker](docker.md): docker Dockerfile docker-compose
     - [podman](podman.md)
-    - [](OAM.md) [](istio.md)
+    - [](istio.md)
 - [arch 架构](architect.md): microservice cloud devops
   - [tools 工具](tools.md) [mac](mac.md) [win](win.md) [brew](brew.md) [iterm2](iterm2.md) [fish](fish.md) [cli](cli.md) [git](git.md) [vim](vim.md) [vscode](vscode.md) [idea](idea.md) [latex](latex.md)
 - [ai](ai.md) [dip数字图像处理](dip.md)

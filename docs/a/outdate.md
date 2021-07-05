@@ -30,7 +30,6 @@
 - [The Top 100- Developer Tools 2020](https://stackshare.io/posts/top-developer-tools-2020)
 - barbaraoakley.com oliveryoung.com
 - <https://github.com/SJTU-CSE/courses-icu>
-- sjtu上海交通大学自救手册 <https://survivesjtu.gitbook.io/>
 - 橙色云协同 工业产品云协同研发平台 <https://www.orangecds.com/>
 - klever: 云原生机器学习模型仓库
 - vmware: nautilus桌面容器运行时; antrea轻量级高性能CNI; Tanzu企业级云原生平台
@@ -172,10 +171,6 @@
 - flink 实时数分: <https://mp.weixin.qq.com/s/6_xd2lZgr-LjMfR_FAWAPg>
 - goland `⌃␣` 变量作为第一个参数: `a.itoa` 可以,  `a.uint64` 不行
 - roadrunner - php app written in go: <https://github.com/spiral/roadrunner>
-- python 实践 公众号-python小二
-  - 如何将你的Python项目全面自动化？ <https://mp.weixin.qq.com/s/eBPbwsTHS9ktS53aKCHi5g>
-  - 用 Python 修改微信（支付宝）运动步数，轻松 TOP1 <https://mp.weixin.qq.com/s/9MgtVL74ygLGI-I95E3-dQ>
-  - 200 个 Python 标准库汇总 <https://mp.weixin.qq.com/s/YghaWZLh3c7R1SdcGqhzsQ>
 - 项目管理 - 思维
 - 螺丝钉精选书单：书中自有黄金屋 <https://mp.weixin.qq.com/s/3It_K_NDMhULAJcd1Y_-YQ>
 - 入门深度学习？ 这有个书单给你 <https://mp.weixin.qq.com/s/s0d3HSfP37d2O_HoUfk0kg>
@@ -191,7 +186,6 @@
 - 科学上网: <https://glados.space/landing/M9OHH-Q88JQ-DX72D-R04RN>
 - 静读天下专业版: pdf, 传书比较麻烦, 传到安卓 -> 扫描
 - coding 没有那么容易, 每行代码都有它的脾气
-- 公众号: 上海市民生活指南
 - 救命指南：熬夜后，如何科学恢复避免猝死？<https://mp.weixin.qq.com/s/tLp7vtUkWs-ZTr2cFDtH9w>
 - 淘宝上能买到哪些好吃的土特零食？<https://mp.weixin.qq.com/s/4ZcFLafcUqULdYo9CFy5Yg>
 - 企业主/营销人员: <https://www.bni.com/>; 学生: <https://bgca.org/>
@@ -639,19 +633,6 @@ webpack visualizer
 - 黑五-优惠码(65%折扣) <https://www.sayweee.com/coupons/chs/linux-foundation>
 - 链接：<https://pan.baidu.com/s/1diHv9pdZTiYlMtl50se0Vg> 提取码：549y
 - 2380 CKA线下考试官方报名方式：<https://training.linuxfoundation.cn/certificate/details/1>
-
-## 计算机资料
-
-- 公众号 小林coding 注意：压缩包我都是加密的，解压密码「xiaolin」。
-  - Java 链接： <https://pan.baidu.com/s/1vB2a1GYEVpfpgkk2r7Qaig> 提取码：2f1g
-  - C 和 C+- 链接： <https://pan.baidu.com/s/1r_bMH-tcG4FQAK4ZpmgVng> 提取码：wc45
-  - Linux 链接： <https://pan.baidu.com/s/1qJigxjzMrJrfFgKPFbS3Jw> 提取码：9a23
-  - 操作系统链接： <https://pan.baidu.com/s/1StDTkn-wEGRtcoQSqwGsuQ> 提取码：kmgj
-  - 计算机网络链接： <https://pan.baidu.com/s/1D7-Yj5CgdtCshPIyQ4iu4w> 提取码：7c4o
-  - 算法链接： <https://pan.baidu.com/s/1DYg1O8PFwu_1c6gbuKGpOw> 提取码：qln8
-  - 数据库链接： <https://pan.baidu.com/s/1xrYlstgZDlVVfYXOFxvebQ> 提取码：lkf5
-  - 面试题链接： <https://pan.baidu.com/s/1bpEs58x89qZpyUH973GjVw> 提取码：v2jo
-  - 设计模式链接： <https://pan.baidu.com/s/14NwqRbQ6AY5nKL9nn8sjaw> 提取码：exix
 
 ## docsify
 

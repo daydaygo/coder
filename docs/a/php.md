@@ -92,6 +92,10 @@
 - Trader
 - seaslog wkhtmltox(html -> pdf/img) apc/apcu
 
+## code
+
+- base algo coder(小工具)
+
 ## mark
 
 ```sh
@@ -113,121 +117,6 @@ max_execution_time = 0 # set_time_limit(0);
 E_ALL & ~E_NOTICE
 E_ALL ^ E_NOTICE
 E_ERROR | E_RECOVERABLE_ERROR
-```
-
-```php
-// php
-declare(ticks=1); // ticks
-register_tick_function();
-declare(encoding='ISO-8859-1'); // encoding
-
-// var
-isset(); // empty()
-var_dump(); // die() print_r() var_export()
-defined('YII_DEBUG') or define('YII_DEBUG', true); // 定义常量常见用法
-
-// text/string
-sprintf('%08d', $uid); // fix length
-preg_match() preg_replace_callback()
-iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
-mb_substr(); mb_convert_encoding($str, 'gbk')
-
-// array
-array_merge(); // array_merge_recursive();
-sort();
-
-// json_encode JsonSerializable
-json_encode([]);
-json_encode((object)[]);
-json_encode(new stdClass());
-json_encode('中国', JSON_UNESCAPED_UNICODE); // \r 换行
-
-// datatime
-date(); strtotime(); time();
-
-// fs
-mime_content_type();
-flock($file, LOCK_EX | LOCK_NB)
-function readdir_r($path) {
-    $fd = opendir($path);
-    while (($f = readdir($fd)) !== false) {
-        if ($f == '.' || $f == '..') continue;
-        $t = $path . '/' . $f;
-        if (is_dir($t)) { // dir
-            readdir_r($t);
-            continue; // be care
-        }
-        // file
-    }
-}
-function scandir_r($path) {
-    $a = scandir($path);
-    foreach ($a as $v) {
-        if ($v == '.' || $v == '..') continue;
-        $t = "$path/$v";
-        if (is_dir($t)) { // dir
-            scandir_r($t);
-            continue; // be care
-        }
-        // file
-    }
-}
-
-// web
-header('Content-type:text/csv'); // csv download
-header('Content-disposition:attachment;filename='.$csvFile); // filename: ASCII, 避免乱码
-echo file_get_contents($csvFile);
-header("Content-Type:image/jpg"); // output image
-echo file_get_contents($imgFile);
-http_build_query() parse_url() pathinfo()
-
-// net
-pack() unpack()
-unpack('H6', '中') // utf8
-
-// crypto
-hash('md5', 'xxx'); // md5('xxx)
-$pw_hash = password_hash('xxx', PASSWORD_DEFAULT); // password_verify('xxx', $pw_hash)
-// openssl
-// key format: RFC4716(ssh-keygen default key format)
-$pri_key = openssl_get_privatekey('pem_format_pri_key'); // ssh-keygen -e -f xxx -m pem
-// key format: pkcs12
-openssl_pkcs12_read(file_get_contents('xxx-pri.pfx'), $pkfArr, 'pri_key_passwd'); // pri: $pkfArr['pkey']
-openssl_pkey_get_details(openssl_get_publickey(file_get_contents('xxx-pub.cer')))['key']; // pub
-$sign_str = openssl_sign('xxx', $pri_key); // openssl_verify('xxx', $sign_str, $pub_key);
-openssl_get_cipher_methods();
-openssl_encrypt($str, 'DES-ECB', $enKey); // openssl_decrypt($str, 'DES-ECB', $enKey)
-
-// sys
-shell_exec();
-
-// backtrace
-$source = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3)[2]['class'];
-preg_match('#\w+#', $source, $arr);
-die($arr[0]);
-
-// 进程长时间运行时的长连接
-if ($this->_linkr && mysqli_ping($this->_linkr)) {
-   $this->_link = $this->_linkr;
-   return true;
-}
-$this->_linkr = $this->_connect($host);
-// pdo_ping
-function pdo_ping($dbconn){
-    try{
-        $dbconn->getAttribute(PDO::ATTR_SERVER_INFO);
-    } catch (PDOException $e) {
-        if(strpos($e->getMessage(), 'MySQL server has gone away')!==false){
-            return false;
-        }
-    }
-    return true;
-}
-
-// 内存溢出
-ini_set('memory_limit', '128m'); // 调整内存使用
-memory_get_usage(); // 获取当前使用
-memory_get_peak_usage(); // 获取内存使用峰值
 ```
 
 ---

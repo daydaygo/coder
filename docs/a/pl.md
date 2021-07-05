@@ -20,13 +20,23 @@
     - 阿里工程师的自我修养.pdf
     - 技术TL: <https://mp.weixin.qq.com/s/U-hqectN-fes7Td6Osut7Q>
     - [关于架构师：角色、能力和挑战](https://mp.weixin.qq.com/s/v_HkBfmGkjHgWKG8oncm6A)
-- 最大公共子集
-- show me the code
-- 学习打基础是确定性, 解决问题是不确定性
-- [附录/词汇/索引](appendix.md)
+
+## 计算机资料
+
+- 公众号 小林coding 注意：压缩包我都是加密的，解压密码「xiaolin」。
+  - Java 链接： <https://pan.baidu.com/s/1vB2a1GYEVpfpgkk2r7Qaig> 提取码：2f1g
+  - C 和 C+- 链接： <https://pan.baidu.com/s/1r_bMH-tcG4FQAK4ZpmgVng> 提取码：wc45
+  - Linux 链接： <https://pan.baidu.com/s/1qJigxjzMrJrfFgKPFbS3Jw> 提取码：9a23
+  - 操作系统链接： <https://pan.baidu.com/s/1StDTkn-wEGRtcoQSqwGsuQ> 提取码：kmgj
+  - 计算机网络链接： <https://pan.baidu.com/s/1D7-Yj5CgdtCshPIyQ4iu4w> 提取码：7c4o
+  - 算法链接： <https://pan.baidu.com/s/1DYg1O8PFwu_1c6gbuKGpOw> 提取码：qln8
+  - 数据库链接： <https://pan.baidu.com/s/1xrYlstgZDlVVfYXOFxvebQ> 提取码：lkf5
+  - 面试题链接： <https://pan.baidu.com/s/1bpEs58x89qZpyUH973GjVw> 提取码：v2jo
+  - 设计模式链接： <https://pan.baidu.com/s/14NwqRbQ6AY5nKL9nn8sjaw> 提取码：exix
 
 ---
 
+- how: 最大公共子集; show me the code; 学习打基础是确定性, 解决问题是不确定性; [附录/词汇/索引](appendix.md)
 - why: for who/what; 前景 能做什么 适合做什么
 - common: scope范围(public/protected/private/default 大小写) order顺序 int数值 lifecycle生命周期
   - 通信本质是状态同步; allIsXXX(object file)
@@ -136,7 +146,7 @@
   - textProcess: strings(printf `str_xxx` buffer build) rege(Perl PCRE; POSIX regex)
   - code编码: bin/hex charset protocol(bin二进制 text文本) dataFormat
   - dataFormat: JSON/YAML/TOML/xml/html/csv/markdown
-  - datatime: date fromat; timezone
+  - datetime: [fromat](https://www.php.net/manual/zh/datetime.formats.relative.php); timezone
   - fs fileSystem: dir mine(magic.mime database) fd bigFile
   - event eventDriven事件驱动: event->dispatcher->listener/handler
   - db database: abstract-layer vendor-specific query/statement->queryBuilder->ORM/DAO/model

@@ -1,13 +1,13 @@
 {
-    "name": "dayday/php",
-    "authors": [
-        {
-            "name": "daydaygo",
-            "email": "1252409767@qq.com"
-        }
-    ],
-    "require": {
-        "league/csv": "^9.6",
-        "hyperf/utils": "^2.1"
+  "name": "dayday/php",
+  "authors": [
+    {
+      "name": "daydaygo",
+      "email": "1252409767@qq.com"
     }
+  ],
+  "require": {
+    "league/csv": "^9.6",
+    "hyperf/utils": "^2.1",
+  }
 }

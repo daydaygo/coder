@@ -1,5 +1,10 @@
 # python 基础
 
+- todo
+  - python 实践 公众号-python小二
+    - 如何将你的Python项目全面自动化？ <https://mp.weixin.qq.com/s/eBPbwsTHS9ktS53aKCHi5g>
+    - 用 Python 修改微信（支付宝）运动步数，轻松 TOP1 <https://mp.weixin.qq.com/s/9MgtVL74ygLGI-I95E3-dQ>
+    - 200 个 Python 标准库汇总 <https://mp.weixin.qq.com/s/YghaWZLh3c7R1SdcGqhzsQ>
 - why: da ai
 - env
   - pip
