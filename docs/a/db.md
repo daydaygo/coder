@@ -154,6 +154,7 @@ get_lock() release_lock()
 -- rand
 SELECT * FROM T ORDER BY rand() LIMIT 3;
 SELECT * FROM T WHERE id>@randid LIMIT 1; -- 最大id+最小id+随机数函数->随机id
+select case obj_type when 1 then '支付' when 2 then '退款' when 3 then '签收' else 'default' end obj_type
 ```
 
 ## mysql

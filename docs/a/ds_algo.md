@@ -2,6 +2,12 @@
 
 - todo
   - 清理掉 go.md 中的 isdamir/gotype
+  - 企业题库
+    - 程序员面试宝典.pdf
+    - 阿里云技术面试红宝书.pdf
+  - 数据结构与算法之美/算法面试通关40讲(极客时间)
+  - 8个常用刷题网站: <https://mp.weixin.qq.com/s/WTjzp7NnD2kD7nbhrvnBIQ>
+  - set: map实现?(java/js/py原生支持)
 
 - 方法
   - name命名: ans ij kv n-len/node t-tmp l-left r-right a-arr m-map q-queue s-stack str
@@ -98,15 +104,6 @@
   - timingWheel 时间轮: 延迟操作
   - 双指针: 快慢指针+左右指针
     - 滑动窗口: 连续问题
-
-## todo
-
-- 企业题库
-  - 程序员面试宝典.pdf
-  - 阿里云技术面试红宝书.pdf
-- 数据结构与算法之美/算法面试通关40讲(极客时间)
-- 8个常用刷题网站: <https://mp.weixin.qq.com/s/WTjzp7NnD2kD7nbhrvnBIQ>
-- set: map实现?(java/js/py原生支持)
 
 ## tool
 

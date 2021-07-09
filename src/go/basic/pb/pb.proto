@@ -10,3 +10,10 @@ message req {
 message resp {
   bytes value  = 1;
 }
+
+enum CheckinProgramRewardStatus {
+  UNREACHABLE = 0;
+  REACHALBLE = 1;
+  CLAIMED = 2;
+  EXIPIRED = 3;
+}

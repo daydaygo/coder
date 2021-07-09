@@ -29,6 +29,7 @@
 - [distlock分布式锁](https://redis.io/topics/distlock)
 - [EXPIRE](https://redis.io/commands/expire): 策略=noeviction+allkeysLRU+volatileLRU+allkeysRandom+volatileRandom+volatileTTL
 - 应用: session FPC全页缓存 queue.celery.py 排行榜/计数器 pub/sub 延时队列=zset+ts.score
+- desktop: [AnotherRedisDesktopManager: Github国内镜像，供下载使用，有问题可移步到](https://gitee.com/qishibo/AnotherRedisDesktopManager) [Redis Desktop Manager 2021.5.191 中文破解版 for Mac Redis 数据库管理工具](https://macwk.com/soft/redis-desktop-manager)
 
 ```sh
 # 统一使用: k,v; 区间: [s, e], e=-1
