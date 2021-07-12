@@ -9,5 +9,6 @@
   "require": {
     "league/csv": "^9.6",
     "hyperf/utils": "^2.1",
+    "box/spout": "^3.3"
   }
 }
