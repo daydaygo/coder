@@ -1,7 +1,7 @@
 # fishshell
 
-* <http://fishshell.com/docs/current/tutorial.html>
-* 使用 `help xxx`, 直接查看 fish 帮助, 如 `help set`
+- <http://fishshell.com/docs/current/tutorial.html>
+- 使用 `help xxx`, 直接查看 fish 帮助, 如 `help set`
 
 ## use
 
@@ -18,13 +18,13 @@ set # -x export; -u unexport; -U universal; -g global
 set -U fish_user_paths /usr/local/bin $fish_user_paths # fish_user_paths 会添加到 PATH, 一次添加, 永久有效
 ```
 
-* config
-  * ~/.config/fish
-    * config.fish 主配置
-    * conf.d 拆分配置
-    * fish_variables
-    * functions
-    * completions
+- config
+  - ~/.config/fish
+    - config.fish 主配置
+    - conf.d 拆分配置
+    - fish_variables
+    - functions
+    - completions
 
 ## mark
 
@@ -86,3 +86,8 @@ function pr
     open 'https://${project_url}/-/merge_requests/new?merge_request%5Bsource_branch%5D='$from'&merge_request%5B&merge_request%5Btarget_branch%5D='$to
 end
 ```
+
+## help
+
+- why: highlight autosuggestion completion
+- env: `bash -c 'command'` `chsh -s /usr/local/bin/fish`
