@@ -13,6 +13,8 @@
   - [Concurrency in Go](co_in_go.md) go语言并发之道; Katherine Cox-Buday 2018
   - [the go programming language](gopl.md) go程序设计语言; Alan A.A. Donovan & Brian W. Kernighan 2016
   - Go并发编程实战 ed2; 郝林 2016 github/gopcp/example.v2
+  - Go In Action; 2015 https://github.com/goinaction/code
+  - Mastering Concurrency in Go; 2014
 - java
   - 阿里巴巴Java开发手册; 2020.10
   - JavaInAction java实战 java8实战 ed2; 2019.12 java8/9/10新特性

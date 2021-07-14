@@ -4,7 +4,7 @@
 
 - sytax: go sync(waitGroup mutex rwmutex cond once pool) chan select GOMAXPROCS
 - co pattern
-- scale
+- scale: error timeout&cancel heartbeat ratelimit
 - go runtime
 
 - raceCondition: `must exec in correct order` dataRace(同一个数据上同时进行读写) raceDetect
