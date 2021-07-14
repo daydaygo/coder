@@ -44,7 +44,7 @@ hset k field v # hash
 setbit / getbit # 今天我们有多少个独立用户访问 -> 2个命令/1.28亿/50ms/16m
 pfadd k v1 v2 # HyperLogLog
 sort # list/set/hash -> 基于bug严重级别的排序 / 大数据量双维度排序
-scan 0 match * count 10 # # scan zscan hscan sscan
+scan 0 match * count 10 # 返回值(游标,返回数组) # scan zscan hscan sscan
 bf.add # bloom https://hub.docker.com/r/redislabs/rebloom
 # pub/sub
 multi/exec # pipeline

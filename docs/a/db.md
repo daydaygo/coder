@@ -151,6 +151,7 @@ FROM_UNIXTIME() UNIX_TIMESTAMP() DATE_FORMAT() NOW()
 uuid() uuid_short()
 max() -- 取最大值
 get_lock() release_lock()
+DATE_ADD(OrderDate,INTERVAL 2 DAY)
 -- rand
 SELECT * FROM T ORDER BY rand() LIMIT 3;
 SELECT * FROM T WHERE id>@randid LIMIT 1; -- 最大id+最小id+随机数函数->随机id
