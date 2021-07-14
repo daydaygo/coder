@@ -19,7 +19,6 @@
   - 递归:
     - 不要跳进递归, 而是利用明确的定义来实现算法逻辑
     - baseCase(各种边界, 也可以通过边界来找找子问题) + 递归处理子问题
-  - 计数排序: 计数信息=排序结果
 - 思路: 枚举/暴力(规范/协议)->子问题/状态压缩/剪枝->最优解
 - 学习算法是非常有趣和令人激动的
 - 但是算法, 就是解决问题时的那份「优雅」.
@@ -73,8 +72,8 @@
 
 - 大部分算法技巧本质上都是树的遍历问题
 - bigO 时间/空间
-- sort 排序
-  - 类型: 交换(冒泡 快排) 插入(直插 shell希尔) 选择(简选 堆) 归并(二路 多路) 基数 计数 桶 线性 自省 间接
+- sort排序
+  - 类型: 交换(冒泡 快排) 插入(直插 shell希尔) 选择(简选 堆) 归并(二路 多路) 基数 计数(计数信息=排序结果) 桶 线性 自省 间接
   - [十种排序算法](https://blog.csdn.net/coolwriter/article/details/78732728)
   - 外部: k路归并败者树 最佳归并树
 - dc分治 recursion 递归
@@ -109,14 +108,14 @@
 
 - edge collection - algo
 - leetcode web
-  - leetbook 学习: 面试+数据结构 -> 我的书架; 学习计划
-  - problemset 题库
+  - leetbook学习: 面试+数据结构 -> 我的书架; 学习计划
+  - problemset题库
     - 分类: 算法 剑指offer 程序员面试经典 hot100 top200
     - **标签tag**: 学了一个知识后, 按标签刷, 快速巩固
       - [位运算 - 力扣（LeetCode）](https://leetcode-cn.com/tag/bit-manipulation/)
     - [设置-进度管理](https://leetcode-cn.com/session/)
-  - circle 社区: 题解
-  - code 题目页面: 模拟面试 快捷键 使用上一次的编辑 还原 playground调试 测试用例 可视化 收藏中心
+  - circle社区: 题解
+  - code题目页面: 模拟面试 快捷键 使用上一次的编辑 还原 playground调试 测试用例 可视化 收藏中心
 - leetcode app
   - 摇一摇切换中英文描述/随机一题
   - 学习分析

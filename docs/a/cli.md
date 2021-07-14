@@ -270,7 +270,7 @@ tmux attach -t 0 # <session-name>
 # 压测
 ab -n 100 -c 10 -p 'post.txt' -T 'application/x-www-form-urlencoded' 'http://test.api.com/ttk/auth/info/'
 hey -z 30s -c 90 --host "coffee.default.example.com" "http://47.100.6.39/?sleep=100"
-wrk -t10 -c1000 -d40s --latency URL
+wrk -t10 -c1000 -d40s --latency --timeount 60 URL
 ```
 
 ## man 查看帮助文档

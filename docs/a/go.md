@@ -64,3 +64,7 @@
 - basic: demo co(go&sync) net(tcp&http) grpc
 - algo
 - pref性能优化
+
+## 资料
+
+- qtt go实战培训: 第一课(slice array string map sync.map mem) 并发(GMP chan atom&lock context 并发模式) 实战(mem http调优 设计模式 qodis) 实战2(pprof 泛型) 微服务(rpc http框架 优雅重启 业务踩坑)

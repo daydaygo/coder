@@ -6,13 +6,6 @@
 - [数据结构知识 | LeetCode Cookbook](https://books.halfrost.com/leetcode/ChapterOne/Data_Structure/)
 - [算法知识 | LeetCode Cookbook](https://books.halfrost.com/leetcode/ChapterOne/Algorithm/)
 
-## note
-
-4.寻找两个正序数组的中位数 - 正序数组二分法
-11.盛最多水的容器 对撞指针
-15.三数之和 难点在排列组合去重
-16.最接近的三数之和 近似解的处理
-
 ## code
 
 - readme: 分类需要做笔记

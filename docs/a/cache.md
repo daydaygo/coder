@@ -17,11 +17,12 @@
 
 > something redis is not a good choice, something redis is just ok, but redis is so easy
 
+- version: 6/acl/multiThread(4IoTread > 25wqps) 5/cluster
 - ds: key-value key-string value-string/list/hash/set/zset
   - SDS 动态字符串 sds.h; list 链表 adlist.h; dict 字典 dict.h; skiplist 跳跃表 redis.h/zskiplist; intset; ziplist
   - redisObject 对象系统: ds->string/hash/list/set/zset; type-check/cmd-poly-del/expire rc->gc/share
 - standalone单例: db RDB-bgsave AOF-bgrewriteaof event-io/time
-- multi: sentinel哨兵 replication cluster.hash槽 twemproxy/codis
+- multi: sentinel哨兵 replication cluster.hash槽 twemproxy/codis qodis
 - fn: pub/sub transcation-multi/exec/watch lua-eval/evalsha/script/load sort bitset slowlog monitor
 - <http://redis.io/commands> <http://try.redis.io> <http://www.redis.cn/documentation.html>
 - [黄建宏](http://redisdoc.com) [源码解读](https://github.com/huangz1990/redis-3.0-annotated) [如何阅读redis源码](http://blog.huangz.me/diary/2014/how-to-read-redis-source-code.html)

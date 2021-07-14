@@ -73,6 +73,7 @@ func mustCopy(dst io.Writer, src io.Reader) {
 // http server
 var mu sync.Mutex
 var cnt int
+
 func httpServer() {
 	http.HandleFunc("/", hello)
 	http.HandleFunc("/count", counter)
