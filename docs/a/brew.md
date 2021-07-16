@@ -45,6 +45,8 @@ brew link/unlink # multi-version
 
 brew install git fish ag # 常用
 brew install graphviz # prof
+
+brew install mysql-client redis # dev
 ```
 
 - install: brew+homebrew-core

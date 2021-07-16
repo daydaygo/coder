@@ -25,6 +25,7 @@ func Test_go(t *testing.T) {
 		return
 	}
 
+	// chan 妙用: https://mp.weixin.qq.com/s/jAUfqu-5nbs8hcua_F7ueQ
 	var tokens = make(chan struct{}, 20) // token sem 类似 sync.Mutex
 	tokens <- struct{}{}
 

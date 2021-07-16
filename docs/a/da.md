@@ -19,6 +19,7 @@ Garbage in, garbage out”(GIGO)
 
 - 数据统计与特征工程: 数据工程师必知必会技能; 齐伟 2020.3 <https://aistudio.baidu.com/aistudio/course/introduce/1337>
 - 数据驱动: 大数据思维 数据产生价值
+- 同比(上年同时期) 环比(对比上月)
 
 ## roadmap
 

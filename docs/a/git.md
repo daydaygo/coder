@@ -167,6 +167,8 @@ web.browser open # 设置 web
 - url：compare-commit; diff patch
 - comment 评论: `R` quote `:` 表情
 - [github 国内加速 9 种方式](https://mp.weixin.qq.com/s/FHCzOA72VsV4ePHA7cDjVg)
+  - https://gitee.com/mirrors_trending
+  - https://codechina.csdn.net/mirrors
 - [Git Clone加速三种方式](https://www.cnblogs.com/XT-xutao/p/12134045.html)
   - 浅拷贝: `git clone --depth=1`
   - 获取 `github.com global.ssl.fastly.net` 的 ip, 添加到 hosts 中

@@ -65,7 +65,7 @@
 ```sh
 mkdir -p # -p 包含父目录
 tail -f -n # -f 滚动查看; -n 行数
-sort -t -k # -t 分隔符; -k 排序
+sort -t -k # -t 分隔符; -k 排序; -r reverse; -f ignore-case; -h number-sort; -u unique
 grep -rn --color -C10 # -r recursion; -n num; -C 前后n行; -v invert
 gzip file # gzip -d xx.gz
 tar cvfz archive.tar.gz dir/ # tar xvfz archive.tar.gz

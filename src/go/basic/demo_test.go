@@ -49,6 +49,7 @@ func Test_type(t *testing.T) {
 
 	// a slice: pointer+len()+cap(); not comparable; nil
 	// make([]int, 0, 3) // make([]int, 3) 会导致前 3 个已赋值, append() 从第 4 个开始
+	// https://github.com/golang/go/wiki/SliceTricks
 	// https://ueokande.github.io/go-slice-tricks/
 	a := arr1[:]
 	a[2] = 4

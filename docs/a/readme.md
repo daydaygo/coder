@@ -37,7 +37,7 @@
   - [db数据库](db.md) [nosql](nosql.md)
   - [clickhouse](clickhouse.md)
   - [flink](flink.md)
-  - [elastic](elastic.md)
+  - [es](es_elasticsearch.md)
   - [mq 消息队列](mq.md)
 - server/service
   - [nginx](nginx.md)

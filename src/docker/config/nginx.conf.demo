@@ -10,6 +10,33 @@
 
 server {
     listen 80;
+    server_name localhost;
+    root /data;
+    autoindex on;
+    # fpm
+    location ~ \.php$ {
+        fastcgi_pass fpm:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    # fpm status
+    location /fpm_status {
+        access_log off;
+        # allow 127.0.0.1;
+        # deny all;
+        fastcgi_pass fpm:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    # nginx status
+    location /ngx_status {
+        stub_status on;
+    }
+}
+
+server {
+    listen 80;
     server_name localhost default_server;
 
     # auth_basic           "admin";
@@ -22,6 +49,39 @@ server {
         fastcgi_pass fpm:9000;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
+    }
+}
+
+# laravel
+server {
+    listen 80;
+    server_name example.com;
+    root /srv/example.com/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
     }
 }
 
@@ -118,6 +178,23 @@ server {
     server_name gogs.daydaygo.me;
     location / {
         proxy_pass http://gogs:3000;
+    }
+}
+
+# pt-oms
+server {
+    listen 80;
+    server_name oms.pt.me;
+    root /var/www/innotech/pt-oms/www;
+    index index.php;
+    if (!-e $request_filename) {
+        rewrite ^/(.*) /index.php?$1 last;
+    }
+    location ~ \.php {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+        client_max_body_size 2m;
     }
 }
 

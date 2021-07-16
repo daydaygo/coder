@@ -25,6 +25,7 @@
       - 查询模板
     - 管理: 数据分布与分段合并 可靠性 ILM自动化索引
     - aggregation聚合统计: 指标->快速 bucket分桶->日常分组 pipeline->二转聚合(固定窗口 滑动窗口)
+    - template
   - sql: sql<->DSL result结果(json/csv/文本) jdbc math 局限(二次查询 二次聚合 分组 复杂DSL)
   - trans数据变换: rollup减少数据 transform转换数据
   - 分词: 分词器 默认/自定义/中文(IK other)
@@ -32,3 +33,9 @@
   - TF/IDF/BM25 词频/逆文本频率/概率模型
 - tool
   - [mobz/elasticsearch-head: A web front end for an elastic search cluster](https://github.com/mobz/elasticsearch-head)
+
+```sh
+curl http://localhost:9200
+./bin/elasticsearch-plugin list
+./bin/elasticsearch-plugin install analysis-ik # 中文分词
+```

@@ -205,8 +205,8 @@ map r closeTabsOnRight
 ## 生活.书影音
 
 - 文档写入
-  - dayday个人: https://github.com/daydaygo/coder https://gitee.com/daydaygo/drive
-  - 萌萌dayday: 腾讯文档 [萌萌dayday日记-无法发票圈202105已不使用](https://www.yuque.com/daydaygo/blog)
+  - dayday个人: https://github.com/daydaygo/coder
+  - 萌萌dayday: 腾讯文档 [萌萌dayday日记-语雀](https://www.yuque.com/daydaygo/blog)
 - 书影: 豆瓣
 - 音: 网易云音乐 qq音乐
 

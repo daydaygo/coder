@@ -5,6 +5,7 @@
   - ini: runtime conf; `PHP_INI_*` modes; ini_set() phpino()
   - [pecl](https://pecl.php.net/): dl()
   - debug: yasd=ext+`php -e`+`phpstorm > debug > start listening`
+  - 环境配置: https://github.com/heiyeluren/heiyeluren-tools/tree/master/linux-env-init
 - type
   - `string`: 4 ways; numberic strings
   - array: ordered map; key(int/string autoindex)
@@ -167,7 +168,11 @@ composer install/update/show/dumpautoload
 composer i --no-dev -vvv # u
 composer show | ag hyperf
 composer why-not php:8
-composer create-project hyperf/swow-skeleton
+composer create-project hyperf/swow-skeleton:dev-master
+
+composer install --optimize-autoloader --no-dev # optimize autoload
+
+# global: ~/.composer
 ```
 
 ```json
@@ -212,3 +217,5 @@ swoole --enable-thread-context # mac m1
   - signal: wait
   - watchDog
   - amazing: usleep 10k.file.pdo.mysqli stream_socket_client()/stream_socket_server() udp
+
+## laravel

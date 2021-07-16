@@ -167,6 +167,7 @@
   - just for fun: the story of an accidental revolutionary 2002.6; 只是为了好玩: linux之父linus自传 2014.7
 - other
   - [游戏剧本怎么写](game_script.md); 2018.8
+  - shell脚本速查手册; 2021 alibaba cloud linux 技术图谱
   - [Linux命令行与shell脚本编程大全 ed3](https://www.ituring.com.cn/book/1698); 2016.8
   - 垃圾回收的算法与实现; 2016.7
   - the image processing handbook 数字图像处理, ed6; Russ J.C. 2014.8

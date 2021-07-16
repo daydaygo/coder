@@ -55,6 +55,7 @@ podman generate kube xxx # 容器 -> kube pod yaml
 ```
 
 ## buildah
+
 > https://buildah.io/
 
 - define image
@@ -103,6 +104,7 @@ ENV TZ Asia/Shanghai
 ```
 
 ## minikube
+
 > https://minikube.sigs.k8s.io/
 
 ```sh

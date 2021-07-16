@@ -5,11 +5,15 @@
   - [shortcut](http://blog.chinaunix.net/uid-361890-id-342066.html): `⌃ a/e u/k w d` `⎋ b/f`
   - `#! /bin/bash`
 - syntax
-  - type: string(default) array(`a:b`)
+  - type: string`'' ""` array(`arr=(a0 a1 a2)` `${arr[0]} ${arr[*]} ${#arr[*]}`)
   - var
-    - userDefine: define `a` use `$x`
-    - preDefine: `$1 $# $* $@` `$? $$ $!`
-    - ENV
+    - userDefine 局部变量: define `k=v` use `$k ${k}`
+    - preDefine shell变量: `$n $0 $# $* $@` `$?退出状态 $$当前pid $!最后pid $-`
+    - ENV 环境变量
+  - op: 算术.数字`+-*/% == !=` 关系.数字`-eq -ne -gt -lt -ge -le` bool`!非 -o或 -a与` 逻辑`&& ||`
+    - string`== != -z长度0 -n长度不为0 $是否为空`
+    - 文件测试`-b块设备 -c字符设备 -d目录 -f普通文件 -g是否设置SGID -k是否设置StickyBits -p管道 -u是否设置SUID -r可读`
+    - 重定向 `> < >> >& <& <<tag将tag之间的内容作为输入 /dev/null`
 - [shell-菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
 
 ```sh
@@ -24,7 +28,13 @@ echo ${arr} # 输出数组第一个值
 
 set -u # 查看变量, 当变量不存在时提示; unset
 echo -e "\e[1;31m xxx \e[0m" # \033[31m[error]\033[0m; \x
+echo -e "a\tb\n" # 开启转义
+printf "%s\t%s\n" "a" "b"
 read -p '提示信息' -t 30 -n 30 -s passwd # prompt time nchar secure
+
+# 文件包含
+. file
+source file
 
 # 位置参数变量
 $1 -$9 ${10} # 给脚本传递变量
@@ -65,33 +75,33 @@ else
     todo
 fi
 
-# case
-case $var in
-con1)
-    todo
-    ;;
-con2)
-    todo
-    ;;
-*)
-    todo
-    ;;
-esas
-
 # for
-for $var in array do
-    todo
+for i in $(seq 1 10); do # {1..10} `ls` $* $str /proc/* $(ls *.sh)
+    echo $i
 done
-
-for((i=1;i<10;i=i+1)) do # 不能使用 i++
-    todo
+for((i=1;i<=10;i++)); do # 不能使用 i++
+  echo $i
 done
 
 # while
-while [condition] do
-    todo
-    修改循环条件
+i=1
+while [ $i -lt 10 ]; do
+  echo $i
+  let i++
 done
+
+# case
+case $var in
+"yes")
+    echo
+    ;;
+"no")
+    echo
+    ;;
+*)
+    echo
+    ;;
+esas
 
 # func
 $(date) # `date`
@@ -99,3 +109,6 @@ $(date) # `date`
 ls \
 -l `# long`
 ```
+
+- Bash Shell Function Library https://github.com/SkypLabs/bsfl
+- bash lib https://github.com/aks/bash-lib

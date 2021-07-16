@@ -13,8 +13,8 @@ services:
                 watch -n 1 'ping baidu.com'
     db:
         # platform: linux/x86_64
-        # image: mysql
-        image: mariadb:10.5.8
+        image: mysql
+        # image: mariadb:10.5.8
         volumes:
             # - ./config/my.cnf:/etc/mysql/conf.d/my.cnf
             # - ./config/sql:/docker-entrypoint-initdb.d
@@ -25,6 +25,24 @@ services:
             TZ: Asia/Shanghai
             MYSQL_ROOT_PASSWORD: root
             # MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        # restart: always
+    redis:
+        image: redis:alpine
+        # image: redislabs/redismod
+        volumes:
+            - ./config/redis.conf:/etc/redis/redis.conf
+            - ./data/redis:/data
+        ports:
+            - "6379:6379"
+        restart: always
+    es:
+        image: elasticsearch:7.13.3
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        environment:
+            discovery.type: "single-node"
+        restart: always
     tdengine:
         image: tdengine/tdengine
         volumes:
@@ -52,14 +70,6 @@ services:
     #         - chs
     #     entrypoint: "/usr/bin/clickhouse-client --host chs"
     #     tty: true
-    redis:
-        image: redis:alpine
-        # image: redislabs/redismod
-        volumes:
-            - ./config/redis.conf:/etc/redis/redis.conf
-            - ./data/redis:/data
-        ports:
-            - "6379:6379"
     nginx:
         image: nginx:alpine
         volumes:
@@ -108,13 +118,6 @@ services:
         image: grafana/grafana
         ports:
             - "3000:3000"
-    es:
-        image: elasticsearch:7.8.0
-        ports:
-            - "9200:9200"
-            - "9300:9300"
-        environment:
-            discovery.type: "single-node"
     kibana:
         image: kibana
         ports:

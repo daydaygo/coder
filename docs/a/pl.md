@@ -166,7 +166,7 @@
   - thread 线程=cpu+执行: sharedMemory+lock cpuExecuteUnit aio async eventDriven
   - co go goroutine 协程: context pool(object connect) channel select defer
   - service/server
-    - io模型: BIO阻塞 nio非阻塞(bio+while) ioMultiplexing多路复用(select/poll/epoll/reactor) aio signalDrivenIO
+    - [io模型](https://mp.weixin.qq.com/s/EDzFOo3gcivOe_RgipkTkQ): BIO阻塞 nio非阻塞(bio+while) ioMultiplexing多路复用(select/poll/epoll/reactor) aio signalDrivenIO
     - c10k(kqueue select/poll/epoll iocp) reactor(add set del callback) sync/async/co
     - curl event(io time signal) ftp LDAP memcache(session) network(dns host ip2long header cookie) session zookeeper
   - other

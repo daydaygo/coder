@@ -20,14 +20,12 @@
 
 ---
 
-* [安装与镜像加速](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
-
 ``` sh
-# ~/.docker/daemon.json
+# ~/.docker/daemon.json /etc/docker/daemon.json
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://c3ywro5t.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://docker.mirrors.sjtug.sjtu.edu.cn","https://docker.mirrors.ustc.edu.cn/"]
 }
 EOF
 sudo systemctl daemon-reload # systemd 管理
@@ -206,14 +204,6 @@ services: # 定义服务
             - MYSQL_DATABASE=blog
             - MYSQL_USER=ghost
             - MYSQL_PASSWORD=***********
-```
-
-## podman
-
-* <http://docs.podman.io/>
-
-```sh
-
 ```
 
 ## etcd

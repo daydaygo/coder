@@ -29,6 +29,7 @@ echo Str::snake('They think they are very powerful');
 
 // array
 array_merge(); // array_merge_recursive();
+array_chunk();
 sort();
 
 // json_encode JsonSerializable
